@@ -1,10 +1,10 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="light">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Structured Context - Coming Soon</title>
-  <meta name="description" content="Structured Context is the connective tissue between human intent and AI execution: a shared, versioned source of truth that ensures AI-assisted development is aligned, compliant, and reproducible.">
+  <title>Structured Context - The connective tissue between human intent and AI execution</title>
+  <meta name="description" content="Structured Context is a shared, versioned source of truth that ensures AI-assisted development is aligned, compliant, and reproducible.">
   <style>
     * {
       margin: 0;
@@ -12,100 +12,502 @@
       box-sizing: border-box;
     }
 
+    :root[data-theme="light"] {
+      --bg-primary: #ffffff;
+      --bg-secondary: #f7f9fc;
+      --text-primary: #1a202c;
+      --text-secondary: #4a5568;
+      --accent: #667eea;
+      --accent-dark: #5568d3;
+      --border: #e2e8f0;
+      --logo-bracket: #2a5490;
+      --logo-bars: #3b6db5;
+    }
+
+    :root[data-theme="dark"] {
+      --bg-primary: #1a202c;
+      --bg-secondary: #2d3748;
+      --text-primary: #f7fafc;
+      --text-secondary: #cbd5e0;
+      --accent: #667eea;
+      --accent-dark: #5568d3;
+      --border: #4a5568;
+      --logo-bracket: #4a9eff;
+      --logo-bars: #5db0ff;
+    }
+
     body {
       font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
-      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-      min-height: 100vh;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      color: #333;
-      padding: 20px;
+      background: var(--bg-primary);
+      color: var(--text-primary);
+      line-height: 1.6;
+      transition: background-color 0.3s ease, color 0.3s ease;
     }
 
     .container {
-      background: white;
-      border-radius: 20px;
-      padding: 60px 40px;
-      max-width: 600px;
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 20px;
+    }
+
+    /* Header */
+    header {
+      border-bottom: 1px solid var(--border);
+      padding: 20px 0;
+      position: sticky;
+      top: 0;
+      background: var(--bg-primary);
+      z-index: 100;
+    }
+
+    .header-content {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .logo-section {
+      display: flex;
+      align-items: center;
+      gap: 15px;
+    }
+
+    .logo {
+      width: 50px;
+      height: 50px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .logo svg {
       width: 100%;
-      box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
-      text-align: center;
+      height: 100%;
     }
 
-    h1 {
-      font-size: 2.5em;
-      margin-bottom: 20px;
-      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      background-clip: text;
-    }
-
-    .tagline {
-      font-size: 1.2em;
-      color: #666;
-      margin-bottom: 40px;
-      line-height: 1.6;
-    }
-
-    .launch-info {
-      background: #f7f9fc;
-      border-radius: 12px;
-      padding: 30px;
-      margin: 30px 0;
-    }
-
-    .launch-label {
-      font-size: 0.9em;
-      text-transform: uppercase;
-      letter-spacing: 2px;
-      color: #764ba2;
+    .site-title {
+      font-size: 1.5em;
       font-weight: 600;
+      color: var(--text-primary);
+    }
+
+    .header-actions {
+      display: flex;
+      gap: 15px;
+      align-items: center;
+    }
+
+    .github-button {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 8px 16px;
+      background: var(--accent);
+      color: white;
+      text-decoration: none;
+      border-radius: 6px;
+      font-weight: 500;
+      transition: background 0.2s;
+    }
+
+    .github-button:hover {
+      background: var(--accent-dark);
+    }
+
+    .theme-toggle {
+      background: var(--bg-secondary);
+      border: 1px solid var(--border);
+      border-radius: 6px;
+      padding: 8px 12px;
+      cursor: pointer;
+      font-size: 14px;
+      color: var(--text-primary);
+      transition: all 0.2s;
+    }
+
+    .theme-toggle:hover {
+      background: var(--border);
+    }
+
+    /* Main Content */
+    main {
+      padding: 60px 0;
+    }
+
+    section {
+      margin-bottom: 80px;
+    }
+
+    h2 {
+      font-size: 2em;
+      margin-bottom: 30px;
+      color: var(--text-primary);
+    }
+
+    .content-block {
+      margin-bottom: 50px;
+    }
+
+    .content-block h3 {
+      font-size: 1.5em;
+      margin-bottom: 15px;
+      color: var(--text-primary);
+    }
+
+    .content-block p {
+      font-size: 1.1em;
+      color: var(--text-secondary);
+      line-height: 1.8;
+    }
+
+    /* Image + Text Side by Side */
+    .side-by-side {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 40px;
+      align-items: center;
+    }
+
+    .side-by-side img {
+      width: 100%;
+      border-radius: 8px;
+      background: var(--bg-secondary);
+      padding: 20px;
+    }
+
+    /* Community Section */
+    .community-section {
+      background: var(--bg-secondary);
+      padding: 60px 40px;
+      border-radius: 12px;
+    }
+
+    .repos-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
+      margin-bottom: 40px;
+    }
+
+    .repo-card {
+      background: var(--bg-primary);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 20px;
+      text-decoration: none;
+      color: var(--text-primary);
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+
+    .repo-card:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    }
+
+    .repo-card.coming-soon {
+      opacity: 0.5;
+      cursor: not-allowed;
+      pointer-events: none;
+    }
+
+    .repo-card h4 {
+      font-size: 1.2em;
       margin-bottom: 10px;
     }
 
-    .launch-date {
-      font-size: 2em;
-      font-weight: 700;
-      color: #333;
+    .repo-card .status {
+      font-size: 0.85em;
+      color: var(--text-secondary);
+      font-style: italic;
     }
 
-    .description {
-      color: #555;
-      line-height: 1.8;
+    .community-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
       margin-top: 30px;
-      font-size: 1.05em;
     }
 
-    @media (max-width: 600px) {
-      .container {
-        padding: 40px 25px;
+    .community-links a {
+      color: var(--accent);
+      text-decoration: none;
+      font-weight: 500;
+      display: flex;
+      align-items: center;
+      gap: 5px;
+    }
+
+    .community-links a:hover {
+      text-decoration: underline;
+    }
+
+    /* Footer */
+    footer {
+      border-top: 1px solid var(--border);
+      padding: 40px 0;
+      text-align: center;
+    }
+
+    .footer-links {
+      display: flex;
+      justify-content: center;
+      gap: 30px;
+      margin-bottom: 20px;
+    }
+
+    .footer-links a {
+      color: var(--text-secondary);
+      text-decoration: none;
+    }
+
+    .footer-links a:hover {
+      color: var(--accent);
+    }
+
+    .copyright {
+      color: var(--text-secondary);
+      font-size: 0.9em;
+    }
+
+    /* Responsive */
+    @media (max-width: 768px) {
+      .side-by-side {
+        grid-template-columns: 1fr;
       }
 
-      h1 {
-        font-size: 2em;
+      .header-content {
+        flex-direction: column;
+        gap: 15px;
       }
 
-      .launch-date {
-        font-size: 1.5em;
+      .repos-grid {
+        grid-template-columns: 1fr;
       }
     }
   </style>
 </head>
 <body>
-  <div class="container">
-    <h1>Structured Context</h1>
-    <p class="tagline">The connective tissue between human intent and AI execution</p>
-
-    <div class="launch-info">
-      <div class="launch-label">Launching</div>
-      <div class="launch-date">January 5, 2026</div>
+  <!-- Header -->
+  <header>
+    <div class="container">
+      <div class="header-content">
+        <div class="logo-section">
+          <div class="logo">
+            <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+              <!-- Curly braces -->
+              <path d="M 20 20 Q 15 20 15 25 L 15 40 Q 15 45 10 45 Q 15 45 15 50 L 15 75 Q 15 80 20 80"
+                    stroke="var(--logo-bracket)" stroke-width="3" fill="none"/>
+              <path d="M 80 20 Q 85 20 85 25 L 85 40 Q 85 45 90 45 Q 85 45 85 50 L 85 75 Q 85 80 80 80"
+                    stroke="var(--logo-bracket)" stroke-width="3" fill="none"/>
+              <!-- Three bars representing meta, standards, project -->
+              <rect x="30" y="30" width="40" height="8" fill="var(--logo-bars)" rx="2"/>
+              <rect x="30" y="46" width="40" height="8" fill="var(--logo-bars)" rx="2"/>
+              <rect x="30" y="62" width="40" height="8" fill="var(--logo-bars)" rx="2"/>
+            </svg>
+          </div>
+          <div class="site-title">StructuredContext.dev</div>
+        </div>
+        <div class="header-actions">
+          <a href="https://github.com/tim-mccrimmon/scs-spec/discussions" class="github-button" target="_blank">
+            💬 Discussions
+          </a>
+          <button class="theme-toggle" onclick="toggleTheme()">
+            <span id="theme-label">Dark</span>
+          </button>
+        </div>
+      </div>
     </div>
+  </header>
 
-    <p class="description">
-      A shared, versioned source of truth that ensures AI-assisted development is aligned, compliant, and reproducible.
-    </p>
-  </div>
+  <!-- Main Content -->
+  <main>
+    <div class="container">
+      <!-- Hero Section -->
+      <section id="hero">
+        <div class="content-block" style="text-align: center; padding: 40px 0;">
+          <h1 style="font-size: 2.5em; margin-bottom: 20px;">A new open standard for AI-assisted software development</h1>
+          <p style="font-size: 1.3em; color: var(--text-secondary); max-width: 800px; margin: 0 auto;">Structured Context is a machine-readable way to align human intent, AI systems, and autonomic governance.</p>
+        </div>
+      </section>
+
+      <!-- What is Structured Context? -->
+      <section id="overview">
+        <div class="content-block">
+          <div class="side-by-side">
+            <div>
+              <h2>What Is Structured Context?</h2>
+              <p>Structured Context is a compact, standardized way to describe the essential elements of a project—so both AI agents and humans can clearly understand what is being built, why, and under what constraints. It captures only the most critical architectural, functional, security, compliance, and operational requirements needed to guide AI-assisted work.</p>
+              <p>Each Structured Context bundle is intentionally designed to fit comfortably inside an LLM's context window (usually 25–35% of available tokens). This leaves room for live conversation, task-specific prompts, and agent memory, while ensuring every agent always has the same, authoritative understanding of the project. Larger or historical information stays in RAG—not in the prompt.</p>
+              <p>The result is a practical, portable, version-controlled project brain that any agent (or developer) can load instantly. It keeps intent, requirements, and constraints aligned across the entire lifecycle—from design, to build, to governance—without ever overwhelming the model.</p>
+            </div>
+            <div>
+              <img src="public/governance-diagram.png"
+                   alt="Structured Context Governance Diagram">
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- The SCS Specification -->
+      <section id="specification">
+        <div class="content-block">
+          <h2>The Structured Context Specification (SCS)</h2>
+          <p>Structured Context Specification (SCS) is an emerging open standard for AI-native software development. It defines a compact, machine-readable format for expressing the essential elements of a system—its purpose, constraints, architecture, risks, and requirements—so that both humans and AI agents share the same authoritative source of truth.</p>
+          <p>SCS organizes structured context into three tiers:</p>
+          <ul style="margin: 20px 0; padding-left: 40px; line-height: 1.8;">
+            <li><strong>Meta Context</strong> — Rules for how SCDs (Structured Context Documents) must be authored, validated, and governed.</li>
+            <li><strong>Standard Context</strong> — Domain-specific requirements derived from regulatory frameworks, industry standards, or organizational policy.</li>
+            <li><strong>Project Context</strong> — The system-specific intent, architecture, constraints, and operational expectations of a particular solution.</li>
+          </ul>
+          <p>Together, these tiers form a portable, version-controlled "project brain" that any tool or agent can load instantly. SCS ensures clarity, interoperability, and safe automation across the entire development lifecycle.</p>
+        </div>
+      </section>
+
+      <!-- Why Structured Context Is Needed -->
+      <section id="why">
+        <div class="content-block">
+          <h2>Why Structured Context Is Needed</h2>
+          <p>Modern software development—especially with AI tools—suffers from four systemic problems:</p>
+
+          <p><strong>1. AI hallucination caused by missing or inconsistent context</strong><br>
+          LLMs generate incorrect or risky output when they lack clear intent, detailed constraints, or authoritative project boundaries.</p>
+
+          <p><strong>2. Requirements scattered across documents, slides, tools, and teams</strong><br>
+          Most organizations store critical knowledge in formats that humans can read, but AI systems cannot reliably consume.</p>
+
+          <p><strong>3. Governance and compliance cannot keep pace with rapid development</strong><br>
+          Security, privacy, and regulatory requirements are usually checked manually, long after code is written.</p>
+
+          <p><strong>4. Teams spend enormous time restating the same information</strong><br>
+          Every engineer, architect, and AI agent ends up rebuilding a mental model of the system from scratch.</p>
+
+          <p style="margin-top: 30px;">Structured Context addresses these problems by providing a single, machine-readable, always-current representation of intent, requirements, architecture, and constraints. It ensures every contributor—human or AI—works from the same shared understanding.</p>
+        </div>
+      </section>
+
+      <!-- What We Aim to Accomplish -->
+      <section id="goals">
+        <div class="content-block">
+          <h2>What We Aim to Accomplish</h2>
+          <p>The goal of SCS is to make AI-assisted development safer, faster, and more predictable. The specification enables:</p>
+
+          <p><strong>Autonomic Governance</strong><br>
+          AI continuously monitors architecture, security posture, dependencies, and changes against the authoritative SCD bundle.</p>
+
+          <p><strong>Continuous Compliance</strong><br>
+          Security, privacy, regulatory, and organizational controls are validated automatically during design and throughout the build process.</p>
+
+          <p><strong>Higher-Quality Code</strong><br>
+          AI tools generate far better results when guided by precise, concise context describing system boundaries, constraints, and intent.</p>
+
+          <p><strong>Reduced Risk</strong><br>
+          By constraining the "solution space," SCDs prevent AI from producing incomplete, non-compliant, or unsafe designs.</p>
+
+          <p><strong>Interoperability Across Tools and Agents</strong><br>
+          Every AI agent can load the same Structured Context bundle, ensuring consistency across analysis, design, testing, and governance tools.</p>
+
+          <p><strong>Predictable, Auditable Outcomes</strong><br>
+          All decisions trace back to a single source of truth, versioned in Git, reviewable by humans, and enforceable by AI.</p>
+        </div>
+      </section>
+
+      <!-- Project Status & Roadmap -->
+      <section id="status">
+        <div class="content-block">
+          <h2>Project Status & Roadmap</h2>
+          <p>The Structured Context Specification is currently in active development. The following milestones are underway:</p>
+          <ul style="margin: 20px 0; padding-left: 40px; line-height: 1.8;">
+            <li><strong>Specification Draft</strong> — Finalizing minimum SCD categories and rules for validation across Meta, Standard, and Project tiers.</li>
+            <li><strong>Reference Implementation</strong> — A working example system demonstrating how SCDs guide AI-assisted development, testing, governance, and compliance.</li>
+            <li><strong>Validator Tool (v0.1)</strong> — First release planned for launch. Ensures SCD bundles adhere to the specification and are safely consumable by AI agents.</li>
+          </ul>
+          <p>A public GitHub repository will be available at launch, along with contributor guidelines and documentation.</p>
+        </div>
+      </section>
+
+      <!-- How to Participate -->
+      <section id="participate">
+        <div class="content-block">
+          <h2>How to Participate</h2>
+          <p>Structured Context is an open standard, and community involvement is essential.</p>
+          <p>You can participate in several ways:</p>
+          <ul style="margin: 20px 0; padding-left: 40px; line-height: 1.8;">
+            <li>Follow the project and watch for updates on GitHub (public at launch).</li>
+            <li>Join the structured context discussions on GitHub Discussions and Reddit (coming soon).</li>
+            <li>Review the specification draft once published and contribute feedback, proposals, or extensions.</li>
+            <li>Test the validator and reference implementation when early releases become available.</li>
+            <li>Help shape best practices for safe, auditable, AI-native development.</li>
+          </ul>
+          <p>The project aims for a community-driven, transparent, and standards-oriented process aligned with modern AI governance needs.</p>
+        </div>
+      </section>
+
+      <!-- Community Section -->
+      <section id="community" class="community-section">
+        <h2>Structured Context Community</h2>
+
+        <div class="repos-grid">
+          <a href="https://github.com/tim-mccrimmon/scs-spec" class="repo-card" target="_blank">
+            <h4>SCS Spec</h4>
+            <p>Core specification and validator</p>
+          </a>
+
+          <div class="repo-card coming-soon">
+            <h4>SCS CLI</h4>
+            <p>Command-line tools</p>
+            <span class="status">Coming Soon</span>
+          </div>
+
+          <div class="repo-card coming-soon">
+            <h4>SCS Registry</h4>
+            <p>Community registry</p>
+            <span class="status">Coming Soon</span>
+          </div>
+
+          <div class="repo-card coming-soon">
+            <h4>Reference Implementation</h4>
+            <p>Example project walkthrough</p>
+            <span class="status">Coming Soon</span>
+          </div>
+        </div>
+
+        <div class="community-links">
+          <a href="https://github.com/tim-mccrimmon/scs-spec/discussions" target="_blank">💬 GitHub Discussions</a>
+          <a href="https://github.com/tim-mccrimmon/scs-spec/issues" target="_blank">🐛 GitHub Issues</a>
+        </div>
+      </section>
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer>
+    <div class="container">
+      <div class="footer-links">
+        <a href="#code-of-conduct">Code of Conduct</a>
+        <a href="#ethical-ai">Ethical AI</a>
+      </div>
+      <div class="copyright">
+        © 2024 Structured Context. All rights reserved.
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // Theme toggle functionality
+    function toggleTheme() {
+      const html = document.documentElement;
+      const currentTheme = html.getAttribute('data-theme');
+      const newTheme = currentTheme === 'light' ? 'dark' : 'light';
+
+      html.setAttribute('data-theme', newTheme);
+      document.getElementById('theme-label').textContent = newTheme === 'light' ? 'Dark' : 'Light';
+      localStorage.setItem('theme', newTheme);
+    }
+
+    // Load saved theme
+    const savedTheme = localStorage.getItem('theme') || 'light';
+    document.documentElement.setAttribute('data-theme', savedTheme);
+    document.getElementById('theme-label').textContent = savedTheme === 'light' ? 'Dark' : 'Light';
+  </script>
 </body>
 </html>
