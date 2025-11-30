@@ -341,7 +341,9 @@
             <div>
               <h2>What Is Structured Context?</h2>
               <p>Structured Context is a compact, standardized way to describe the essential elements of a project—so both AI agents and humans can clearly understand what is being built, why, and under what constraints. It captures only the most critical architectural, functional, security, compliance, and operational requirements needed to guide AI-assisted work.</p>
+              <br>
               <p>Each Structured Context bundle is intentionally designed to fit comfortably inside an LLM's context window (usually 25–35% of available tokens). This leaves room for live conversation, task-specific prompts, and agent memory, while ensuring every agent always has the same, authoritative understanding of the project. Larger or historical information stays in RAG—not in the prompt.</p>
+              <br>
               <p>The result is a practical, portable, version-controlled project brain that any agent (or developer) can load instantly. It keeps intent, requirements, and constraints aligned across the entire lifecycle—from design, to build, to governance—without ever overwhelming the model.</p>
             </div>
             <div>
@@ -372,16 +374,16 @@
         <div class="content-block">
           <h2>Why Structured Context Is Needed</h2>
           <p>Modern software development—especially with AI tools—suffers from four systemic problems:</p>
-
+          <br>
           <p><strong>1. AI hallucination caused by missing or inconsistent context</strong><br>
           LLMs generate incorrect or risky output when they lack clear intent, detailed constraints, or authoritative project boundaries.</p>
-
+          <br>
           <p><strong>2. Requirements scattered across documents, slides, tools, and teams</strong><br>
           Most organizations store critical knowledge in formats that humans can read, but AI systems cannot reliably consume.</p>
-
+          <br>
           <p><strong>3. Governance and compliance cannot keep pace with rapid development</strong><br>
           Security, privacy, and regulatory requirements are usually checked manually, long after code is written.</p>
-
+          <br>
           <p><strong>4. Teams spend enormous time restating the same information</strong><br>
           Every engineer, architect, and AI agent ends up rebuilding a mental model of the system from scratch.</p>
 
@@ -394,22 +396,22 @@
         <div class="content-block">
           <h2>What We Aim to Accomplish</h2>
           <p>The goal of SCS is to make AI-assisted development safer, faster, and more predictable. The specification enables:</p>
-
+          <br
           <p><strong>Autonomic Governance</strong><br>
           AI continuously monitors architecture, security posture, dependencies, and changes against the authoritative SCD bundle.</p>
-
+          <br>
           <p><strong>Continuous Compliance</strong><br>
           Security, privacy, regulatory, and organizational controls are validated automatically during design and throughout the build process.</p>
-
+          <br>
           <p><strong>Higher-Quality Code</strong><br>
           AI tools generate far better results when guided by precise, concise context describing system boundaries, constraints, and intent.</p>
-
+          <br>
           <p><strong>Reduced Risk</strong><br>
           By constraining the "solution space," SCDs prevent AI from producing incomplete, non-compliant, or unsafe designs.</p>
-
+          <br>
           <p><strong>Interoperability Across Tools and Agents</strong><br>
           Every AI agent can load the same Structured Context bundle, ensuring consistency across analysis, design, testing, and governance tools.</p>
-
+          <br>
           <p><strong>Predictable, Auditable Outcomes</strong><br>
           All decisions trace back to a single source of truth, versioned in Git, reviewable by humans, and enforceable by AI.</p>
         </div>
