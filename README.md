@@ -1,5 +1,7 @@
 # Structured Context
 
+**THIS IS A TEST**
+
 The connective tissue between human intent and AI execution.
 
 [![Built with Starlight](https://astro.badg.es/v2/built-with-starlight/tiny.svg)](https://starlight.astro.build)
