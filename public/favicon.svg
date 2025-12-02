@@ -1,1 +1,22 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128"><path fill-rule="evenodd" d="M81 36 64 0 47 36l-1 2-9-10a6 6 0 0 0-9 9l10 10h-2L0 64l36 17h2L28 91a6 6 0 1 0 9 9l9-10 1 2 17 36 17-36v-2l9 10a6 6 0 1 0 9-9l-9-9 2-1 36-17-36-17-2-1 9-9a6 6 0 1 0-9-9l-9 10v-2Zm-17 2-2 5c-4 8-11 15-19 19l-5 2 5 2c8 4 15 11 19 19l2 5 2-5c4-8 11-15 19-19l5-2-5-2c-8-4-15-11-19-19l-2-5Z" clip-rule="evenodd"/><path d="M118 19a6 6 0 0 0-9-9l-3 3a6 6 0 1 0 9 9l3-3Zm-96 4c-2 2-6 2-9 0l-3-3a6 6 0 1 1 9-9l3 3c3 2 3 6 0 9Zm0 82c-2-2-6-2-9 0l-3 3a6 6 0 1 0 9 9l3-3c3-2 3-6 0-9Zm96 4a6 6 0 0 1-9 9l-3-3a6 6 0 1 1 9-9l3 3Z"/><style>path{fill:#000}@media (prefers-color-scheme:dark){path{fill:#fff}}</style></svg>
+<svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+  <!-- Curly braces -->
+  <path d="M 20 20 Q 15 20 15 25 L 15 40 Q 15 45 10 45 Q 15 45 15 50 L 15 75 Q 15 80 20 80"
+        stroke="#2a5490" stroke-width="3" fill="none"/>
+  <path d="M 80 20 Q 85 20 85 25 L 85 40 Q 85 45 90 45 Q 85 45 85 50 L 85 75 Q 85 80 80 80"
+        stroke="#2a5490" stroke-width="3" fill="none"/>
+  <!-- Three bars representing meta, standards, project -->
+  <rect x="30" y="30" width="40" height="8" fill="#3b6db5" rx="2"/>
+  <rect x="30" y="46" width="40" height="8" fill="#3b6db5" rx="2"/>
+  <rect x="30" y="62" width="40" height="8" fill="#3b6db5" rx="2"/>
+
+  <style>
+    @media (prefers-color-scheme: dark) {
+      path {
+        stroke: #4a9eff;
+      }
+      rect {
+        fill: #5db0ff;
+      }
+    }
+  </style>
+</svg>
