@@ -1,6 +1,4 @@
-# Structured Context
-
-**THIS IS A TEST**
+# Structured Context Specification (SCS)
 
 The connective tissue between human intent and AI execution.
 
