@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Structured Context Specification</title>
-  <meta name="description" content="An open effort to define what context means for AI systems, and how it should be structured, versioned, and composed at runtime." />
+  <title>Structured Context Specification (SCS)</title>
+  <meta name="description" content="A community-driven specification for creating, validating, and versioning structured context for AI systems. Make agent context concise, precise, non-conflicting, and versionable." />
   <style>
     :root[data-theme="light"] {
       --bg: #ffffff;
@@ -139,50 +139,50 @@
 
 <main>
   <div class="container">
-    <h1>Defining context for AI systems</h1>
+    <h1>A better way to manage AI context</h1>
 
     <p>
-      Structured Context Specification (SCS) is an open, early-stage effort to define
-      what <em>context</em> means for AI systems — distinct from prompts, retrieval,
-      memory, and tools — and how that context can be represented as a structured,
-      versioned artifact at runtime.
+      If you're building with AI, you know the struggle: agent context ends up scattered
+      across prompts, docs, code, and tribal knowledge. It drifts. It conflicts. It's
+      impossible to validate or version properly.
     </p>
 
     <p>
-      Models are increasingly static and interchangeable. Behavior emerges from
-      the information they are allowed to see and assume at inference time.
-      SCS exists to make that information explicit, inspectable, and debatable.
+      <strong>Structured Context Specification (SCS)</strong> is a community-driven spec
+      (and tooling) for creating, validating, and versioning structured context as
+      git-native artifacts.
     </p>
 
-    <h2>What this project is</h2>
+    <h2>What SCS provides</h2>
     <p>
-      SCS is a draft specification, a set of schemas, and a working space for
-      people who care about reliability, debuggability, and boundaries in AI systems.
-      It is intentionally incomplete and opinionated.
+      <strong>Concise</strong> — focused, atomic definitions (not walls of text)<br/>
+      <strong>Precise</strong> — structured YAML/JSON (not ambiguous prose)<br/>
+      <strong>Non-conflicting</strong> — explicitly composed and validated (not scattered)<br/>
+      <strong>Versionable</strong> — git-native, reviewable, auditable<br/>
+      <strong>Reusable</strong> — composable bundles for standards, domains, projects
     </p>
 
-    <h2>What this project is not</h2>
+    <h2>Who uses SCS?</h2>
     <p>
-      SCS is not a prompt framework, a RAG system, an agent runtime, or a governance product.
-      Those may build on top of structured context — but they are not defined here.
+      <strong>Development teams</strong> — structure architecture rules, coding conventions, domain concepts<br/>
+      <strong>Standards organizations</strong> — package compliance requirements (HIPAA, SOC2, PCI-DSS) for agent consumption<br/>
+      <strong>Enterprises</strong> — version agent governance policies alongside code<br/>
+      <strong>Anyone building with AI</strong> — create clear, precise, non-conflicting context
     </p>
 
-    <h2>The question we are exploring</h2>
+    <h2>This is spec work</h2>
     <p>
-      <strong>If behavior emerges at runtime, what information should an AI system
-      be allowed to assume?</strong>
-    </p>
-
-    <p>
-      Everything in SCS is an attempt to answer — or challenge — that question.
+      SCS is v0.3, actively evolving. If you're struggling with context management — or if you
+      disagree with our framing — that's exactly the contribution we need. Open an issue, join
+      the discussion, help us improve the spec.
     </p>
 
     <div class="cta">
       <a class="button primary" href="https://github.com/tim-mccrimmon/structured-context-spec" target="_blank">
-        Read the spec on GitHub
+        View spec on GitHub
       </a>
       <a class="button" href="https://github.com/tim-mccrimmon/structured-context-spec/discussions" target="_blank">
-        Join the discussion
+        Join discussion
       </a>
     </div>
   </div>
