@@ -3,9 +3,7 @@ title: FAQ
 description: Frequently asked questions about Structured Context Specification.
 ---
 
-# Structured Context Specification — FAQ
-
-Medium-length, complete (but not deep-dive) answers.
+# Structured Context Specification
 
 ---
 
