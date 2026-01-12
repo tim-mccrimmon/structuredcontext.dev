@@ -8,8 +8,6 @@ The connective tissue between human intent and AI execution.
 
 This is the official website for Structured Context, a shared, versioned source of truth that ensures AI-assisted development is aligned, compliant, and reproducible.
 
-**Launch Date:** January 5, 2026
-
 ## Development
 
 ### Prerequisites
