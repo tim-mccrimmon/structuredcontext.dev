@@ -16,6 +16,36 @@ export default defineConfig({
 			social: [
 				{ icon: 'github', label: 'GitHub', href: 'https://github.com/structuredcontext' }
 			],
+			head: [
+				{
+					tag: 'meta',
+					attrs: {
+						property: 'og:image',
+						content: 'https://structuredcontext.dev/og-image.png',
+					},
+				},
+				{
+					tag: 'meta',
+					attrs: {
+						name: 'twitter:image',
+						content: 'https://structuredcontext.dev/og-image.png',
+					},
+				},
+				{
+					tag: 'meta',
+					attrs: {
+						name: 'twitter:card',
+						content: 'summary_large_image',
+					},
+				},
+				{
+					tag: 'meta',
+					attrs: {
+						name: 'keywords',
+						content: 'structured context, AI governance, AI context management, LLM context, AI compliance, context versioning, AI agents, context bundles, SCS',
+					},
+				},
+			],
 			customCss: [
 				'./src/styles/custom.css',
 			],
