@@ -14,7 +14,7 @@ export default defineConfig({
 				src: './src/assets/logo.svg',
 			},
 			social: [
-				{ icon: 'github', label: 'GitHub', href: 'https://github.com/structuredcontext' }
+				{ icon: 'github', label: 'GitHub', href: 'https://github.com/tim-mccrimmon/structured-context-spec' }
 			],
 			head: [
 				{
@@ -90,12 +90,12 @@ export default defineConfig({
 					items: [
 						{ label: 'Contributing', slug: 'community/contributing' },
 						{ label: 'Examples', slug: 'community/examples' },
-						{ label: 'Discussions', link: 'https://github.com/structuredcontext/discussions' },
+						{ label: 'Discussions', link: 'https://github.com/tim-mccrimmon/structured-context-spec/discussions' },
 					],
 				},
 			],
 			editLink: {
-				baseUrl: 'https://github.com/structuredcontext/spec/edit/main/',
+				baseUrl: 'https://github.com/tim-mccrimmon/structured-context-spec/edit/main/',
 			},
 			lastUpdated: true,
 			credits: false,

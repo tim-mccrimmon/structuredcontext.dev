@@ -109,6 +109,6 @@ All SCDs from all bundles are combined and provided to AI systems.
 
 ## Next Steps
 
-- [View full specification on GitHub](https://github.com/structuredcontext)
-- [Join discussions](https://github.com/structuredcontext/discussions)
-- [Contribute to the spec](https://github.com/structuredcontext)
+- [View full specification on GitHub](https://github.com/tim-mccrimmon/structured-context-spec)
+- [Join discussions](https://github.com/tim-mccrimmon/structured-context-spec/discussions)
+- [Contribute to the spec](https://github.com/tim-mccrimmon/structured-context-spec)

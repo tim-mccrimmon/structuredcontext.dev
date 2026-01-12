@@ -15,21 +15,21 @@ SCS is v0.3 and actively evolving. If you're struggling with context management 
 
 ### Report Issues
 
-- [GitHub Issues](https://github.com/structuredcontext/spec/issues)
+- [GitHub Issues](https://github.com/tim-mccrimmon/structured-context-spec/issues)
 - Bug reports
 - Feature requests
 - Spec clarifications
 
 ### Join Discussions
 
-- [GitHub Discussions](https://github.com/structuredcontext/discussions)
+- [GitHub Discussions](https://github.com/tim-mccrimmon/structured-context-spec/discussions)
 - Share use cases
 - Propose improvements
 - Ask questions
 
 ### Contribute Code
 
-- CLI tooling
+- CLI tools
 - Validators
 - Examples
 - Documentation
