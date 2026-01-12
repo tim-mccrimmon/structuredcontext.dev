@@ -7,10 +7,6 @@ description: How to version and deploy your SCS bundles.
 
 Lock your bundles with semantic versions and deploy them for use.
 
-:::note[Coming Soon]
-Deployment guide is being developed. CLI launches January 5, 2026.
-:::
-
 ## Versioning Workflow
 
 1. Validate bundle (strict mode)

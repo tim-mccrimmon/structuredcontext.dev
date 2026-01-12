@@ -9,10 +9,6 @@ The Structured Context Specification (SCS) defines how to create, validate, vers
 
 **Current Version**: v0.3 (actively evolving)
 
-:::note[Spec Evolution]
-SCS is v0.3 and actively evolving. This is spec work. If you're struggling with context management—or if you disagree with our framing—that's exactly the contribution we need.
-:::
-
 ## Core Concepts
 
 ### 1. Structured Context Documents (SCDs)

@@ -7,10 +7,6 @@ description: Get up and running with SCS in minutes.
 
 Get started with Structured Context Specification in just a few steps.
 
-:::note[Coming Soon]
-SCS is launching January 5, 2026. Check back soon for installation instructions and tutorials.
-:::
-
 ## Installation
 
 ```bash

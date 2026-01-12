@@ -7,10 +7,6 @@ description: Understanding the fundamental concepts of Structured Context Specif
 
 This page will cover the fundamental concepts you need to understand to work with SCS effectively.
 
-:::note[Coming Soon]
-Content for this section is being developed. Check back after launch on January 5, 2026.
-:::
-
 ## Key Topics
 
 - **Structured Context Documents (SCDs)**: Individual units of context

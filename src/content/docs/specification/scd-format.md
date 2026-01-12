@@ -7,10 +7,6 @@ description: Technical specification for Structured Context Documents.
 
 The technical specification for SCD files.
 
-:::note[Coming Soon]
-Complete SCD format specification is being documented.
-:::
-
 ## SCD Structure
 
 ```yaml

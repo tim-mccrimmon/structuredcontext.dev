@@ -7,10 +7,6 @@ description: Step-by-step guide to creating your first SCS bundle.
 
 Learn how to create structured context bundles for your organization.
 
-:::note[Coming Soon]
-Full bundle creation guide is being developed. CLI launches January 5, 2026.
-:::
-
 ## Basic Workflow
 
 1. Create SCDs (YAML files)

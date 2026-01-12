@@ -7,10 +7,6 @@ description: Technical specification for SCS bundle manifests.
 
 The technical specification for bundle manifest files.
 
-:::note[Coming Soon]
-Complete format specification is being documented.
-:::
-
 ## Bundle Manifest Structure
 
 ```yaml

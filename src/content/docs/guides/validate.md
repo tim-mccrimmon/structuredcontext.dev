@@ -7,10 +7,6 @@ description: How to validate your structured context bundles and SCDs.
 
 Ensure your bundles and SCDs are properly structured before deployment.
 
-:::note[Coming Soon]
-Validation guide is being developed. CLI launches January 5, 2026.
-:::
-
 ## Validation Modes
 
 - **Loose**: Structure validation only (DRAFT phase)

@@ -7,10 +7,6 @@ description: Complete reference for the SCS command-line interface.
 
 Complete command reference for the SCS CLI.
 
-:::note[Coming Soon]
-CLI launches January 5, 2026. Full reference documentation will be available at launch.
-:::
-
 ## Installation
 
 ```bash
