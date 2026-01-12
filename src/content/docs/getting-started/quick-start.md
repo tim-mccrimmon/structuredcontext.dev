@@ -166,7 +166,7 @@ SCS provides templates for common use cases:
 
 Now that you have a project:
 
-- **[Understand Core Concepts](/getting-started/core-concepts/)** - Learn about bundles, SCDs, and tiers
+- **[FAQ](/getting-started/faq/)** - Frequently asked questions
 - **[CLI Reference](/guides/cli-reference/)** - Complete command documentation
 - **[View Examples](/community/examples/)** - See real-world examples
 - **[Specification](/specification/overview/)** - Dive into technical details
@@ -201,4 +201,4 @@ scs --help
 scs new --help
 ```
 
-Ready to dive deeper? Check out [Core Concepts](/getting-started/core-concepts/) to understand how SCS works.
+Ready to dive deeper? Check out the [FAQ](/getting-started/faq/) to understand how SCS works.

@@ -55,7 +55,6 @@ export default defineConfig({
 					items: [
 						{ label: 'What is SCS?', link: '/' },
 						{ label: 'Quick Start', slug: 'getting-started/quick-start' },
-						{ label: 'Core Concepts', slug: 'getting-started/core-concepts' },
 						{ label: 'FAQ', slug: 'getting-started/faq' },
 					],
 				},
