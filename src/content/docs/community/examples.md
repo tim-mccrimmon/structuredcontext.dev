@@ -173,7 +173,7 @@ Have an example to share? We'd love to see how you're using SCS!
 
 ## Next Steps
 
-- **[Create Your Own Bundle](/guides/create-bundles/)** - Step-by-step guide
-- **[Validate Context](/guides/validate/)** - Ensure correctness
+- **[Create Your Own Bundle](/guides/workflow/)** - Step-by-step guide
+- **[Validate Context](/guides/workflow/)** - Ensure correctness
 - **[View Specification](/specification/overview/)** - Technical details
 - **[Quick Start](/getting-started/quick-start/)** - Get up and running

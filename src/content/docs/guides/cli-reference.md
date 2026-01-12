@@ -256,6 +256,6 @@ scs validate --help
 
 ## Next Steps
 
-- [Create Your First Bundle](/guides/create-bundles/)
-- [Validate Context](/guides/validate/)
+- [Create Your First Bundle](/guides/workflow/)
+- [Validate Context](/guides/workflow/)
 - [View Examples](/community/examples/)

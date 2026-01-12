@@ -28,4 +28,4 @@ Project Bundle → Domain Bundle → Concern Bundles → Standards Bundles → M
 ## Next Steps
 
 - [View Specification](/specification/overview/)
-- [Create Your First Bundle](/guides/create-bundles/)
+- [Create Your First Bundle](/guides/workflow/)

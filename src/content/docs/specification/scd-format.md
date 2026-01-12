@@ -29,4 +29,4 @@ content:
 ## Next Steps
 
 - [Bundle Format](/specification/bundle-format/)
-- [Create Bundles](/guides/create-bundles/)
+- [Create Bundles](/guides/workflow/)

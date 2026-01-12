@@ -26,4 +26,4 @@ Content coming soon.
 ## Next Steps
 
 - [View SCD Format Spec](/specification/scd-format/)
-- [Create Bundles](/guides/create-bundles/)
+- [Create Bundles](/guides/workflow/)

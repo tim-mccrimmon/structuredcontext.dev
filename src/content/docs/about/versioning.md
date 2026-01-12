@@ -25,5 +25,5 @@ Content coming soon.
 
 ## Next Steps
 
-- [Learn about Validation](/guides/validate/)
-- [Version & Deploy Guide](/guides/version-deploy/)
+- [Learn about Validation](/guides/workflow/)
+- [Version & Deploy Guide](/guides/workflow/)
