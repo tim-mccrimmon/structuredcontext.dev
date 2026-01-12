@@ -59,15 +59,6 @@ export default defineConfig({
 					],
 				},
 				{
-					label: 'About SCS',
-					items: [
-						{ label: 'Architecture', slug: 'about/architecture' },
-						{ label: 'Bundle Types', slug: 'about/bundle-types' },
-						{ label: 'SCDs', slug: 'about/scds' },
-						{ label: 'Versioning', slug: 'about/versioning' },
-					],
-				},
-				{
 					label: 'Using SCS',
 					items: [
 						{ label: 'Workflow', slug: 'guides/workflow' },
