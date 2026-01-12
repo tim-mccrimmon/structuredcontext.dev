@@ -1,0 +1,22 @@
+<svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+  <!-- Curly braces -->
+  <path d="M 20 20 Q 15 20 15 25 L 15 40 Q 15 45 10 45 Q 15 45 15 50 L 15 75 Q 15 80 20 80"
+        stroke="#2a5490" stroke-width="3" fill="none"/>
+  <path d="M 80 20 Q 85 20 85 25 L 85 40 Q 85 45 90 45 Q 85 45 85 50 L 85 75 Q 85 80 80 80"
+        stroke="#2a5490" stroke-width="3" fill="none"/>
+  <!-- Three bars representing meta, standards, project -->
+  <rect x="30" y="30" width="40" height="8" fill="#3b6db5" rx="2"/>
+  <rect x="30" y="46" width="40" height="8" fill="#3b6db5" rx="2"/>
+  <rect x="30" y="62" width="40" height="8" fill="#3b6db5" rx="2"/>
+
+  <style>
+    @media (prefers-color-scheme: dark) {
+      path {
+        stroke: #4a9eff;
+      }
+      rect {
+        fill: #5db0ff;
+      }
+    }
+  </style>
+</svg>

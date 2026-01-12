@@ -1,0 +1,181 @@
+/* Custom styles to match MCP aesthetic */
+
+/* Dark theme colors (default) */
+:root[data-theme='dark'] {
+	--sl-color-accent-low: #1e3a5f;
+	--sl-color-accent: #3b6db5;
+	--sl-color-accent-high: #5a8fd6;
+}
+
+/* Light theme colors */
+:root[data-theme='light'] {
+	--sl-color-accent-low: #e6f0ff;
+	--sl-color-accent: #3b6db5;
+	--sl-color-accent-high: #2d5a99;
+	--sl-color-bg: #ffffff;
+	--sl-color-bg-nav: #f8fafc;
+	--sl-color-bg-sidebar: #f8fafc;
+}
+
+/* Hero section styling */
+.hero {
+	text-align: center;
+	padding: 4rem 1rem 2rem;
+}
+
+.hero h1 {
+	font-size: clamp(2rem, 5vw, 3.5rem);
+	font-weight: 700;
+	line-height: 1.2;
+	margin-bottom: 1.5rem;
+}
+
+.hero .tagline {
+	font-size: clamp(1.125rem, 2vw, 1.5rem);
+	max-width: 50rem;
+	margin: 0 auto 3rem;
+	line-height: 1.6;
+	opacity: 0.9;
+}
+
+/* Card grid improvements */
+.card-grid {
+	gap: 1.5rem;
+	margin-top: 2rem;
+}
+
+/* Enhance card styling for MCP look */
+.card {
+	border-radius: 0.75rem;
+	padding: 2rem;
+	transition: all 0.2s ease;
+}
+
+.card:hover {
+	border-color: var(--sl-color-accent);
+	transform: translateY(-2px);
+}
+
+:root[data-theme='dark'] .card:hover {
+	box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+}
+
+:root[data-theme='light'] .card:hover {
+	box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+.card .title {
+	font-size: 1.25rem;
+	font-weight: 600;
+	margin-bottom: 0.75rem;
+}
+
+/* Content sections */
+.sl-markdown-content {
+	font-size: 1.125rem;
+	line-height: 1.7;
+}
+
+.sl-markdown-content h2 {
+	margin-top: 4rem;
+	margin-bottom: 1.5rem;
+	font-size: 2rem;
+	font-weight: 700;
+}
+
+.sl-markdown-content p {
+	margin-bottom: 1.5rem;
+}
+
+/* Action buttons */
+.actions {
+	display: flex;
+	gap: 1rem;
+	justify-content: center;
+	flex-wrap: wrap;
+	margin-top: 2rem;
+}
+
+/* Clean, minimal spacing */
+.content-panel {
+	max-width: 70rem;
+	margin: 0 auto;
+}
+
+/* Launch banner styling */
+.launch-banner {
+	background: linear-gradient(135deg, var(--sl-color-accent-low) 0%, var(--sl-color-accent) 100%);
+	border: 1px solid var(--sl-color-accent);
+	border-radius: 0.5rem;
+	padding: 1rem 1.5rem;
+	margin: 2rem auto;
+	max-width: 30rem;
+	text-align: center;
+	font-weight: 600;
+}
+
+:root[data-theme='light'] .launch-banner {
+	color: var(--sl-color-black);
+}
+
+:root[data-theme='dark'] .launch-banner {
+	color: var(--sl-color-white);
+}
+
+/* Improve readability */
+.sl-markdown-content ul {
+	margin-left: 1.5rem;
+	margin-bottom: 1.5rem;
+}
+
+.sl-markdown-content li {
+	margin-bottom: 0.5rem;
+}
+
+.sl-markdown-content strong {
+	font-weight: 600;
+}
+
+/* Footer styling */
+footer {
+	border-top: 1px solid var(--sl-color-gray-5);
+	margin-top: 4rem;
+	padding: 2rem 0;
+}
+
+.footer-content {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	flex-wrap: wrap;
+	gap: 1rem;
+	max-width: 70rem;
+	margin: 0 auto;
+	padding: 0 1rem;
+	font-size: 0.9rem;
+	opacity: 0.8;
+}
+
+.footer-links {
+	display: flex;
+	gap: 2rem;
+	flex-wrap: wrap;
+}
+
+.footer-links a {
+	text-decoration: none;
+	transition: opacity 0.2s ease;
+}
+
+.footer-links a:hover {
+	opacity: 0.7;
+}
+
+/* Sidebar styling enhancements */
+.sidebar {
+	border-right: 1px solid var(--sl-color-gray-5);
+}
+
+.sidebar nav {
+	padding: 1rem;
+}

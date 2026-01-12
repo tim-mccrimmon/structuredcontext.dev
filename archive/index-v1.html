@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Structured Context Specification (SCS)</title>
+  <meta name="description" content="A community-driven specification for creating, validating, and versioning structured context for AI systems. Make agent context concise, precise, non-conflicting, and versionable." />
+  <style>
+    :root[data-theme="light"] {
+      --bg: #ffffff;
+      --bg-muted: #f7f9fc;
+      --text: #1a202c;
+      --text-muted: #4a5568;
+      --accent: #3b6db5;
+      --border: #e2e8f0;
+      --logo-bracket: #2a5490;
+      --logo-bars: #3b6db5;
+    }
+
+    body {
+      margin: 0;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.7;
+    }
+
+    header {
+      border-bottom: 1px solid var(--border);
+      padding: 20px 0;
+    }
+
+    .container {
+      max-width: 960px;
+      margin: 0 auto;
+      padding: 0 20px;
+    }
+
+    .header-content {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .logo-section {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .logo {
+      width: 42px;
+      height: 42px;
+    }
+
+    .site-title {
+      font-size: 1.2em;
+      font-weight: 600;
+    }
+
+    a.button {
+      display: inline-block;
+      padding: 10px 18px;
+      border: 1px solid var(--border);
+      border-radius: 6px;
+      text-decoration: none;
+      color: var(--text);
+      font-weight: 500;
+      background: var(--bg-muted);
+    }
+
+    a.button.primary {
+      background: var(--accent);
+      color: white;
+      border-color: var(--accent);
+    }
+
+    main {
+      padding: 80px 0;
+    }
+
+    h1 {
+      font-size: 2.4em;
+      line-height: 1.2;
+      margin-bottom: 20px;
+    }
+
+    h2 {
+      margin-top: 60px;
+      font-size: 1.6em;
+    }
+
+    p {
+      max-width: 720px;
+      color: var(--text-muted);
+      font-size: 1.05em;
+    }
+
+    .cta {
+      margin-top: 40px;
+      display: flex;
+      gap: 16px;
+      flex-wrap: wrap;
+    }
+
+    footer {
+      border-top: 1px solid var(--border);
+      padding: 40px 0;
+      font-size: 0.9em;
+      color: var(--text-muted);
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <div class="container">
+    <div class="header-content">
+      <div class="logo-section">
+        <div class="logo">
+          <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+            <path d="M 20 20 Q 15 20 15 25 L 15 40 Q 15 45 10 45 Q 15 45 15 50 L 15 75 Q 15 80 20 80"
+                  stroke="var(--logo-bracket)" stroke-width="3" fill="none"/>
+            <path d="M 80 20 Q 85 20 85 25 L 85 40 Q 85 45 90 45 Q 85 45 85 50 L 85 75 Q 85 80 80 80"
+                  stroke="var(--logo-bracket)" stroke-width="3" fill="none"/>
+            <rect x="30" y="30" width="40" height="8" fill="var(--logo-bars)" rx="2"/>
+            <rect x="30" y="46" width="40" height="8" fill="var(--logo-bars)" rx="2"/>
+            <rect x="30" y="62" width="40" height="8" fill="var(--logo-bars)" rx="2"/>
+          </svg>
+        </div>
+        <div class="site-title">StructuredContext.dev</div>
+      </div>
+      <a class="button" href="https://github.com/tim-mccrimmon/structured-context-spec/discussions" target="_blank">
+        Discussions
+      </a>
+    </div>
+  </div>
+</header>
+
+<main>
+  <div class="container">
+    <h1>A better way to manage AI context</h1>
+
+    <p>
+      If you're building with AI, you know the struggle: agent context ends up scattered
+      across prompts, docs, code, and tribal knowledge. It drifts. It conflicts. It's
+      impossible to validate or version properly.
+    </p>
+
+    <p>
+      <strong>Structured Context Specification (SCS)</strong> is a community-driven spec
+      (and tooling) for creating, validating, and versioning structured context as
+      git-native artifacts.
+    </p>
+
+    <h2>What SCS provides</h2>
+    <p>
+      <strong>Concise</strong> — focused, atomic definitions (not walls of text)<br/>
+      <strong>Precise</strong> — structured YAML/JSON (not ambiguous prose)<br/>
+      <strong>Non-conflicting</strong> — explicitly composed and validated (not scattered)<br/>
+      <strong>Versionable</strong> — git-native, reviewable, auditable<br/>
+      <strong>Reusable</strong> — composable bundles for standards, domains, projects
+    </p>
+
+    <h2>Who uses SCS?</h2>
+    <p>
+      <strong>Development teams</strong> — structure architecture rules, coding conventions, domain concepts<br/>
+      <strong>Standards organizations</strong> — package compliance requirements (HIPAA, SOC2, PCI-DSS) for agent consumption<br/>
+      <strong>Enterprises</strong> — version agent governance policies alongside code<br/>
+      <strong>Anyone building with AI</strong> — create clear, precise, non-conflicting context
+    </p>
+
+    <h2>This is spec work</h2>
+    <p>
+      SCS is v0.3, actively evolving. If you're struggling with context management — or if you
+      disagree with our framing — that's exactly the contribution we need. Open an issue, join
+      the discussion, help us improve the spec.
+    </p>
+
+    <div class="cta">
+      <a class="button primary" href="https://github.com/tim-mccrimmon/structured-context-spec" target="_blank">
+        View spec on GitHub
+      </a>
+      <a class="button" href="https://github.com/tim-mccrimmon/structured-context-spec/discussions" target="_blank">
+        Join discussion
+      </a>
+    </div>
+  </div>
+</main>
+
+<footer>
+  <div class="container">
+    © 2026 Tim McCrimmon · Apache 2.0 · Open specification
+  </div>
+</footer>
+
+</body>
+</html>
