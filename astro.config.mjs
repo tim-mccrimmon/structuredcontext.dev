@@ -70,9 +70,9 @@ export default defineConfig({
 				{
 					label: 'Using SCS',
 					items: [
-						{ label: 'Create Bundles', slug: 'guides/create-bundles' },
+						{ label: 'Define Intent', slug: 'guides/create-bundles' },
 						{ label: 'Validate Context', slug: 'guides/validate' },
-						{ label: 'Version & Deploy', slug: 'guides/version-deploy' },
+						{ label: 'Version Context', slug: 'guides/version-deploy' },
 						{ label: 'CLI Reference', slug: 'guides/cli-reference' },
 					],
 				},
