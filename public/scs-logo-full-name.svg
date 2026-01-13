@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 120" width="400" height="120">
+  <!-- Icon symbol (left side) -->
+  <g transform="translate(60, 60)">
+    <!-- Left curly brace -->
+    <path d="M -25,-30 Q -30,-30 -30,-25 L -30,-10 Q -30,-5 -35,-5 Q -30,-5 -30,0 L -30,15 Q -30,20 -25,20" 
+          fill="none" stroke="#2563eb" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+    
+    <!-- Right curly brace -->
+    <path d="M 25,-30 Q 30,-30 30,-25 L 30,-10 Q 30,-5 35,-5 Q 30,-5 30,0 L 30,15 Q 30,20 25,20" 
+          fill="none" stroke="#2563eb" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+    
+    <!-- Three horizontal bars -->
+    <rect x="-15" y="-18" width="30" height="6" rx="1" fill="#2563eb"/>
+    <rect x="-15" y="-6" width="30" height="6" rx="1" fill="#2563eb"/>
+    <rect x="-15" y="6" width="30" height="6" rx="1" fill="#2563eb"/>
+  </g>
+  
+  <!-- Text -->
+  <g>
+    <text x="130" y="55" font-family="'Inter', 'Helvetica Neue', Arial, sans-serif" font-size="42" font-weight="700" fill="#1e293b">Structured</text>
+    <text x="130" y="95" font-family="'Inter', 'Helvetica Neue', Arial, sans-serif" font-size="42" font-weight="700" fill="#1e293b">Context</text>
+  </g>
+</svg>
