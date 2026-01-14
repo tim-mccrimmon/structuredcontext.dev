@@ -1,9 +1,17 @@
 ---
-title: What is SCS?
-description: Learn about the Structured Context Specification and why it matters for AI development.
+title: Context Engineering with SCS
+description: SCS is an open specification for Context Engineering—designing structured, versioned context so AI systems deliver enterprise-aligned outcomes.
 ---
 
-## What is Structured Context?
+:::note[Context Engineering]
+Gartner defines **Context Engineering** as *"designing and structuring the relevant data, workflows and environment so AI systems can understand intent, make better decisions and deliver contextual, enterprise-aligned outcomes—without relying on manual prompts."*
+
+SCS is how you do Context Engineering. Structured. Versioned. Composable.
+
+[Read Gartner's article →](https://www.gartner.com/en/articles/context-engineering)
+:::
+
+## Context Engineering for AI
 
 If you're building with AI, you know the struggle: agent context ends up scattered across prompts, docs, code, and tribal knowledge. **It drifts. It conflicts. It's impossible to validate or version properly.**
 

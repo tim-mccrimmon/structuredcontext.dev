@@ -9,7 +9,7 @@ export default defineConfig({
 	integrations: [
 		starlight({
 			title: 'Structured Context',
-			description: 'A shared, versioned source of truth that ensures AI-assisted development is aligned, compliant, and reproducible.',
+			description: 'Context Engineering for AI development. A structured, versioned approach to AI context management.',
 			logo: {
 				src: './src/assets/logo.svg',
 			},
@@ -42,7 +42,7 @@ export default defineConfig({
 					tag: 'meta',
 					attrs: {
 						name: 'keywords',
-						content: 'structured context, AI governance, AI context management, LLM context, AI compliance, context versioning, AI agents, context bundles, SCS',
+						content: 'context engineering, structured context, AI governance, AI context management, LLM context, AI compliance, context versioning, AI agents, context bundles, SCS',
 					},
 				},
 			],
