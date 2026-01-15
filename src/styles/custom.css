@@ -179,3 +179,43 @@ footer {
 .sidebar nav {
 	padding: 1rem;
 }
+
+/* Show GitHub label next to icon in header */
+.social-icons a[href*="github"] {
+	display: flex;
+	align-items: center;
+	gap: 0.5rem;
+}
+
+.social-icons a[href*="github"]::after {
+	content: 'GitHub';
+	font-size: 0.875rem;
+	font-weight: 500;
+}
+
+/* Pastel colored LinkCards */
+.sl-link-card:nth-child(1) {
+	border-left: 4px solid #ffd966;
+	background: linear-gradient(to right, rgba(255, 217, 102, 0.1), transparent);
+}
+
+.sl-link-card:nth-child(2) {
+	border-left: 4px solid #93c47d;
+	background: linear-gradient(to right, rgba(147, 196, 125, 0.1), transparent);
+}
+
+.sl-link-card:nth-child(3) {
+	border-left: 4px solid #6fa8dc;
+	background: linear-gradient(to right, rgba(111, 168, 220, 0.1), transparent);
+}
+
+.sl-link-card:nth-child(4) {
+	border-left: 4px solid #b4a7d6;
+	background: linear-gradient(to right, rgba(180, 167, 214, 0.1), transparent);
+}
+
+.sl-link-card:nth-child(5) {
+	border-left: 4px solid #f6b26b;
+	background: linear-gradient(to right, rgba(246, 178, 107, 0.1), transparent);
+}
+

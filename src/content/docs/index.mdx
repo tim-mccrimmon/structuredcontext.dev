@@ -1,9 +1,9 @@
 ---
-title: Context Engineering with SCS
+title: Structured Context Specification
 description: SCS is an open specification for Context Engineering—designing structured, versioned context so AI systems deliver enterprise-aligned outcomes.
 ---
 
-import { Card, CardGrid } from '@astrojs/starlight/components';
+import { Card, CardGrid, LinkCard } from '@astrojs/starlight/components';
 
 :::tip[Context Engineering]
 Gartner defines **Context Engineering** as *"designing and structuring the relevant data, workflows and environment so AI systems can understand intent, make better decisions and deliver contextual, enterprise-aligned outcomes—without relying on manual prompts."*
@@ -57,20 +57,10 @@ Collections of SCDs packaged together with metadata, imports, and provenance tra
 
 ## What can SCS enable?
 
-<CardGrid stagger>
-	<Card title="Alignment" icon="approve-check">
-		Ensure AI systems understand and follow your organization's standards, patterns, and requirements from the start.
-	</Card>
-	<Card title="Compliance" icon="document">
-		Maintain audit trails and enforce policies across all AI-assisted development activities.
-	</Card>
-	<Card title="Reproducibility" icon="refresh">
-		Version your context just like your code. Roll back, compare, and evolve your AI collaboration over time.
-	</Card>
-	<Card title="Collaboration" icon="random">
-		Share context across teams, tools, and AI systems. Break down silos and build institutional knowledge.
-	</Card>
-</CardGrid>
+- **Alignment** — Ensure AI systems understand and follow your organization's standards, patterns, and requirements from the start.
+- **Compliance** — Maintain audit trails and enforce policies across all AI-assisted development activities.
+- **Reproducibility** — Version your context just like your code. Roll back, compare, and evolve your AI collaboration over time.
+- **Collaboration** — Share context across teams, tools, and AI systems. Break down silos and build institutional knowledge.
 
 ## Why Git-Native?
 
@@ -83,16 +73,9 @@ SCS treats context as first-class artifacts that live alongside your code:
 ## Next Steps
 
 <CardGrid cols={2}>
-	<Card title="Quick Start" icon="rocket" href="/getting-started/quick-start/">
-		Get up and running with SCS in minutes.
-	</Card>
-	<Card title="FAQ" icon="open-book" href="/getting-started/faq/">
-		Frequently asked questions about SCS.
-	</Card>
-	<Card title="View Specification" icon="document" href="/specification/overview/">
-		Dive into the technical specification.
-	</Card>
-	<Card title="Join Community" icon="star" href="/community/contributing/">
-		Contribute to the spec and share your ideas.
-	</Card>
+	<LinkCard title="Quick Start" description="Get up and running with SCS in minutes." href="/getting-started/quick-start/" />
+	<LinkCard title="FAQ" description="Frequently asked questions about SCS." href="/getting-started/faq/" />
+	<LinkCard title="View Specification" description="Dive into the technical specification." href="/specification/overview/" />
+	<LinkCard title="Contribute" description="Contribute to the spec and share your ideas." href="/community/contributing/" />
+	<LinkCard title="GitHub Repository" description="Open source under Apache 2.0 license." href="https://github.com/tim-mccrimmon/structured-context-spec" />
 </CardGrid>
