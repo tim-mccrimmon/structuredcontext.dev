@@ -3,15 +3,17 @@ title: Specification Overview
 description: Technical overview of the Structured Context Specification (SCS v0.3).
 ---
 
-## Specification Overview
+## Structured Context Specification
 
-The Structured Context Specification (SCS) defines how to create, validate, version, and deploy structured context for AI systems.
+SCS defines how to create, validate, version, and deploy structured context for AI systems.
+It's the format that SCS plugins generate — you don't need to write it by hand, but
+understanding the structure helps when working with complex projects.
 
 **Current Version**: v0.3 (actively evolving)
 
-## Core Concepts
+## Core concepts
 
-### 1. Structured Context Documents (SCDs)
+### Structured Context Documents (SCDs)
 
 SCDs are YAML files containing structured context organized by tier:
 
@@ -19,7 +21,7 @@ SCDs are YAML files containing structured context organized by tier:
 - **Standards Tier** (`scd:standards:*`): External compliance requirements
 - **Project Tier** (`scd:project:*`): Company/project-specific context
 
-### 2. Bundles
+### Bundles
 
 Bundles are versioned packages of SCDs with:
 - Unique ID (`bundle:<name>:<version>`)
@@ -28,7 +30,7 @@ Bundles are versioned packages of SCDs with:
 - Imports (dependency bundles)
 - Provenance (who, when, why)
 
-### 3. Bundle Types
+### Bundle types
 
 #### Meta Bundle
 - **What**: Universal SCS vocabulary
@@ -43,26 +45,26 @@ Bundles are versioned packages of SCDs with:
 - **Examples**: `bundle:hipaa:1.0.0`, `bundle:soc2:1.0.0`
 
 #### Domain Bundle
-- **What**: Company knowledge aggregator ⭐
-- **Who**: CTO/CIO (C-suite owned)
-- **Cardinality**: **1 per company**
-- **Imports**: ≥1 concern bundle
+- **What**: Company knowledge aggregator
+- **Who**: CTO/CIO
+- **Cardinality**: 1 per company
+- **Imports**: One or more concern bundles
 - **Example**: `bundle:acme-health-corp:1.0.0`
 
 #### Concern Bundle
 - **What**: Functional area standards (leaf nodes)
 - **Who**: VPs/Directors (Architect, CISO, CMO, CDO)
-- **Cardinality**: Variable (based on needs)
+- **Cardinality**: Variable
 - **Examples**: `bundle:acme-architecture:1.0.0`, `bundle:acme-security:1.0.0`
 
 #### Project Bundle
-- **What**: Individual initiative (AI entry point)
+- **What**: Individual initiative
 - **Who**: Product/Project Managers
 - **Cardinality**: Many (one per project)
 - **Imports**: Typically imports domain bundle
 - **Example**: `bundle:prior-auth-app:1.0.0`
 
-## Bundle Hierarchy
+## Bundle hierarchy
 
 ```
 Project Bundle (AI uses this)
@@ -76,22 +78,19 @@ Standards Bundles (HIPAA, SOC2, CHAI)
 Meta Bundle (SCS foundation)
 ```
 
-## Validation Philosophy
+## Validation
 
-**Phase 1 (DRAFT)**: Loose validation
-- Validates YAML structure, bundle fields
-- Does NOT enforce required SCD content
-- Supports spectrum from minimal to full disclosure
+**DRAFT phase**: Loose validation. Validates YAML structure and bundle fields, but does not
+enforce required SCD content. Supports the full spectrum from minimal to fully-specified.
 
-**Phase 2 (Version)**: Strict validation
-- All checks enforced before versioning
-- Immutable once published
+**Version phase**: Strict validation. All checks enforced before versioning. Immutable once
+published.
 
-## Import Resolution
+## Import resolution
 
-When a bundle is deployed, imports are recursively resolved:
+When a bundle is deployed, imports are resolved recursively:
 
-```python
+```
 Input: bundle:prior-auth:1.0.0
 
 Output (resolved):
@@ -107,8 +106,9 @@ Output (resolved):
 
 All SCDs from all bundles are combined and provided to AI systems.
 
-## Next Steps
+## Next steps
 
-- [View full specification on GitHub](https://github.com/tim-mccrimmon/structured-context-spec)
-- [Join discussions](https://github.com/tim-mccrimmon/structured-context-spec/discussions)
-- [Contribute to the spec](https://github.com/tim-mccrimmon/structured-context-spec)
+- [v0.3 Specification](/docs/specification/v0-3/)
+- [Bundle Format](/docs/specification/bundle-format/)
+- [SCD Format](/docs/specification/scd-format/)
+- [View full spec on GitHub](https://github.com/tim-mccrimmon/structured-context-spec)

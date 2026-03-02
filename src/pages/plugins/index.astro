@@ -1,0 +1,31 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Nav from '../../components/Nav.astro';
+import SiteFooter from '../../components/SiteFooter.astro';
+---
+
+<BaseLayout title="Plugins" description="SCS plugins for Claude Code — scs-vibe and scs-team.">
+	<Nav />
+	<section class="section">
+		<h1>SCS Plugins</h1>
+		<p style="color: var(--color-text-muted); max-width: 60ch; margin-bottom: 2rem;">
+			Both plugins are available now in the
+			<a href="https://github.com/tim-mccrimmon/structured-context-spec/tree/main/plugins" target="_blank" rel="noopener">
+				plugins directory on GitHub
+			</a>.
+		</p>
+		<div class="card-grid">
+			<div class="card">
+				<h3>scs-vibe</h3>
+				<p>For solo developers and small projects. Set up in 15 minutes with a single slash command in Claude Code.</p>
+				<a href="/plugins/scs-vibe" class="card-link">Learn more &rarr;</a>
+			</div>
+			<div class="card">
+				<h3>scs-team</h3>
+				<p>For teams with existing documentation. Transforms PRDs, architecture docs, and compliance requirements into structured context.</p>
+				<a href="/plugins/scs-team" class="card-link">Learn more &rarr;</a>
+			</div>
+		</div>
+	</section>
+	<SiteFooter />
+</BaseLayout>

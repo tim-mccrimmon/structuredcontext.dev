@@ -7,7 +7,7 @@ description: Technical specification for SCS bundle manifests.
 
 The technical specification for bundle manifest files.
 
-## Bundle Manifest Structure
+## Bundle manifest structure
 
 ```yaml
 id: bundle:<name>
@@ -31,9 +31,11 @@ provenance:
 
 ## Fields
 
-Complete field documentation coming soon.
+Complete field documentation coming soon. See the
+[GitHub repo](https://github.com/tim-mccrimmon/structured-context-spec) for the current schema.
 
-## Next Steps
+## Next steps
 
-- [SCD Format](/specification/scd-format/)
-- [View v0.3 Spec](/specification/v0.3/)
+- [SCD Format](/docs/specification/scd-format/)
+- [Specification Overview](/docs/specification/overview/)
+- [v0.3 Changelog](/docs/specification/v0-3/)

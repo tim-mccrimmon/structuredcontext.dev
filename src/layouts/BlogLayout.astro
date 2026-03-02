@@ -1,0 +1,71 @@
+---
+import BaseLayout from './BaseLayout.astro';
+import Nav from '../components/Nav.astro';
+import StarCTA from '../components/StarCTA.astro';
+import SubstackEmbed from '../components/SubstackEmbed.astro';
+import SiteFooter from '../components/SiteFooter.astro';
+
+interface Props {
+	title: string;
+	description?: string;
+	date: Date;
+	tags?: string[];
+	image?: string;
+	imageAlt?: string;
+}
+
+const { title, description, date, tags = [], image, imageAlt } = Astro.props;
+
+const ogImage = image
+	? `https://structuredcontext.dev${image}`
+	: 'https://structuredcontext.dev/og-image.png';
+
+const formattedDate = date.toLocaleDateString('en-US', {
+	year: 'numeric',
+	month: 'long',
+	day: 'numeric',
+});
+---
+
+<BaseLayout title={title} description={description} ogImage={ogImage}>
+	<Nav />
+	<main class="blog-article">
+		<article class="prose">
+			<header class="article-header">
+				{image && (
+					<img
+						src={image}
+						alt={imageAlt ?? ''}
+						class="article-hero-image"
+					/>
+				)}
+				<h1>{title}</h1>
+				<div class="article-meta">
+					<time datetime={date.toISOString()}>{formattedDate}</time>
+					{tags.length > 0 && (
+						<div class="tags">
+							{tags.map(tag => <span class="tag">{tag}</span>)}
+						</div>
+					)}
+				</div>
+			</header>
+			<slot />
+			<div class="article-footer">
+				<StarCTA />
+			</div>
+		</article>
+		<aside class="article-sidebar">
+			<SubstackEmbed />
+		</aside>
+	</main>
+	<SiteFooter />
+</BaseLayout>
+
+<style>
+.article-hero-image {
+	width: 100%;
+	border-radius: 8px;
+	margin-bottom: 1.5rem;
+	display: block;
+}
+</style>

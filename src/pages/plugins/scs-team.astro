@@ -1,0 +1,115 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Nav from '../../components/Nav.astro';
+import StarCTA from '../../components/StarCTA.astro';
+import SiteFooter from '../../components/SiteFooter.astro';
+---
+
+<BaseLayout
+	title="scs-team"
+	description="Transform your existing documentation into structured context Claude Code actually uses. For teams with PRDs, architecture docs, and compliance requirements."
+>
+	<Nav />
+	<div class="plugin-page">
+		<div class="plugin-hero">
+			<p class="hero-eyebrow">For Teams with Documentation</p>
+			<h1>scs-team</h1>
+			<p>
+				Transform your existing documentation into structured context Claude actually uses.
+				PRDs, architecture docs, security requirements, compliance checklists — scs-team processes
+				them into structured context so Claude gets the full picture before writing a single line
+				of code.
+			</p>
+			<div class="hero-ctas">
+				<a
+					href="https://github.com/tim-mccrimmon/structured-context-spec/tree/main/plugins/scs-team"
+					class="btn btn-primary"
+					target="_blank"
+					rel="noopener"
+				>
+					Get scs-team on GitHub
+				</a>
+				<a href="/docs/plugins/scs-team" class="btn btn-secondary">Read the docs</a>
+			</div>
+		</div>
+
+		<!-- Demo video -->
+		<section class="section" style="padding: 0 0 3rem;">
+			<div class="video-embed" style="max-width: 760px; border-radius: 8px; overflow: hidden;">
+				<iframe
+					src="https://www.youtube.com/embed/s8rj-fD1MVs"
+					title="SCS Team Demo"
+					allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+					allowfullscreen
+				></iframe>
+			</div>
+		</section>
+
+		<hr class="section-divider" />
+
+		<!-- How it works -->
+		<section class="section" style="padding-left: 0; padding-right: 0;">
+			<h2>How it works</h2>
+			<p style="color: var(--color-text-muted); max-width: 60ch;">
+				Point scs-team at your documentation directory. It reads your existing PRDs, architecture
+				decisions, security policies, and compliance requirements, then generates structured
+				context that every team member's Claude instance loads automatically.
+			</p>
+
+			<div class="install-block">
+				<p>Install via Claude Code</p>
+				<code>/scs-team:init</code>
+			</div>
+
+			<p style="color: var(--color-text-muted); font-size: 0.9rem; margin-top: 0.5rem;">
+				Run this slash command from within Claude Code. Follow the prompts to point it at your
+				documentation sources.
+			</p>
+		</section>
+
+		<hr class="section-divider" />
+
+		<!-- Team benefits -->
+		<section class="section" style="padding-left: 0; padding-right: 0;">
+			<h2>Why teams use it</h2>
+			<div class="card-grid" style="margin-top: 1.5rem;">
+				<div class="card">
+					<h3>Consistent context</h3>
+					<p>
+						Every team member's Claude instance loads the same structured context. No more
+						divergent outputs from different prompting styles.
+					</p>
+				</div>
+				<div class="card">
+					<h3>Your docs, not ours</h3>
+					<p>
+						Works with what you already have — Notion exports, Confluence pages, Markdown files,
+						or plain text. No new documentation system required.
+					</p>
+				</div>
+				<div class="card">
+					<h3>Reviewable and versioned</h3>
+					<p>
+						Context lives in your repo as plain files. Review changes in pull requests, roll back
+						with git, and audit who changed what and when.
+					</p>
+				</div>
+			</div>
+		</section>
+
+		<hr class="section-divider" />
+
+		<section class="section" style="padding-left: 0; padding-right: 0;">
+			<StarCTA />
+		</section>
+
+		<div class="section" style="padding-left: 0; padding-right: 0; padding-top: 0;">
+			<p>
+				<a href="/docs/plugins/scs-team">Full documentation &rarr;</a>
+				&nbsp;&middot;&nbsp;
+				<a href="/plugins/scs-vibe">Looking for the solo plugin? &rarr;</a>
+			</p>
+		</div>
+	</div>
+	<SiteFooter />
+</BaseLayout>

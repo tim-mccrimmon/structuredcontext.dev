@@ -7,7 +7,7 @@ description: Technical specification for Structured Context Documents.
 
 The technical specification for SCD files.
 
-## SCD Structure
+## SCD structure
 
 ```yaml
 id: scd:<tier>:<name>
@@ -26,7 +26,7 @@ content:
 - **standards**: External compliance requirements
 - **project**: Company/project-specific context
 
-## Next Steps
+## Next steps
 
-- [Bundle Format](/specification/bundle-format/)
-- [Create Bundles](/guides/workflow/)
+- [Bundle Format](/docs/specification/bundle-format/)
+- [Specification Overview](/docs/specification/overview/)

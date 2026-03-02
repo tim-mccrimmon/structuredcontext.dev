@@ -1,0 +1,241 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Nav from '../components/Nav.astro';
+import StarCTA from '../components/StarCTA.astro';
+import SiteFooter from '../components/SiteFooter.astro';
+import { getCollection } from 'astro:content';
+
+const allPosts = await getCollection('blog', ({ data }) => !data.draft);
+const recentPosts = allPosts
+	.sort((a, b) => b.data.date.getTime() - a.data.date.getTime())
+	.slice(0, 3);
+---
+
+<BaseLayout
+	title="Structured Context Specification"
+	description="Give your AI coding assistant the context it needs to work with your system — not against it. SCS plugins for Claude Code take 15 minutes to set up."
+>
+	<Nav />
+
+	<!-- Hero -->
+	<section class="hero">
+		<p class="hero-eyebrow">Open Specification · Apache 2.0</p>
+		<h1>Stop fighting your AI coding assistant</h1>
+		<p class="hero-subhead">
+			SCS gives Claude Code the context it needs to work with your system instead of against it.
+			Structured, versioned, git-native. Set up in 15 minutes.
+		</p>
+		<div class="hero-ctas">
+			<a href="/plugins/scs-vibe" class="btn btn-primary">Try the Plugin</a>
+			<a
+				href="https://github.com/tim-mccrimmon/structured-context-spec"
+				class="btn btn-secondary"
+				target="_blank"
+				rel="noopener"
+			>
+				Star on GitHub
+			</a>
+		</div>
+	</section>
+
+	<hr class="section-divider" />
+
+	<!-- Video Demos -->
+	<section class="section">
+		<p class="section-label">See it in action</p>
+		<h2>Two plugins. Two minutes each.</h2>
+		<div class="video-grid" style="margin-top: 2rem;">
+			<div class="video-card">
+				<div class="video-embed">
+					<iframe
+						src="https://www.youtube.com/embed/boO86wbPoqI"
+						title="SCS Vibe Demo"
+						allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+						allowfullscreen
+					></iframe>
+				</div>
+				<h3>scs-vibe — Solo Developer</h3>
+				<p>
+					Point it at a PRD or existing project. SCS Vibe scans what's there, asks a few questions,
+					and generates structured context Claude uses every session.
+				</p>
+				<a href="/plugins/scs-vibe" class="card-link">Install scs-vibe &rarr;</a>
+			</div>
+			<div class="video-card">
+				<div class="video-embed">
+					<iframe
+						src="https://www.youtube.com/embed/s8rj-fD1MVs"
+						title="SCS Team Demo"
+						allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+						allowfullscreen
+					></iframe>
+				</div>
+				<h3>scs-team — Teams with Docs</h3>
+				<p>
+					Transform your existing PRDs, architecture docs, and compliance checklists into structured
+					context so Claude gets the full picture before writing a line of code.
+				</p>
+				<a href="/plugins/scs-team" class="card-link">Install scs-team &rarr;</a>
+			</div>
+		</div>
+	</section>
+
+	<hr class="section-divider" />
+
+	<!-- The Problem -->
+	<section class="section">
+		<p class="section-label">The problem</p>
+		<h2>Claude is good. But it doesn't know your system.</h2>
+		<p class="section-intro">Every session starts fresh. Claude improvises from training data — not your patterns, your constraints, or your team's decisions. The result:</p>
+		<ul class="problem-list">
+			<li>Generated code that conflicts with your existing architecture</li>
+			<li>Repeated mistakes you've already corrected</li>
+			<li>Context that drifts across sessions, agents, and team members</li>
+			<li>No way to version, review, or audit what you've told your AI</li>
+		</ul>
+		<p class="section-intro" style="margin-top: 1.5rem;">SCS treats context as a first-class artifact — structured, versioned, and git-native, the same way your code is.</p>
+	</section>
+
+	<hr class="section-divider" />
+
+	<!-- Claude Code alignment -->
+	<section class="section">
+		<p class="section-label">Why it works with Claude Code</p>
+		<h2>Built for the tools you're already using</h2>
+		<p class="section-intro">SCS outputs exactly what Claude Code reads: <code>CLAUDE.md</code> and <code>.claude/rules/</code>. No middleware, no new toolchain.</p>
+		<div style="overflow-x: auto;">
+			<table class="comparison-table">
+				<thead>
+					<tr>
+						<th>Without SCS</th>
+						<th>With SCS</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<td>Context lives in ad-hoc prompts and scattered notes</td>
+						<td>Context is a versioned YAML artifact in your repo</td>
+					</tr>
+					<tr>
+						<td>Each session starts from scratch</td>
+						<td>Claude loads structured context from <code>CLAUDE.md</code> every session</td>
+					</tr>
+					<tr>
+						<td>Team members give Claude different instructions</td>
+						<td>Context is shared, reviewable, and consistent across the team</td>
+					</tr>
+					<tr>
+						<td>No audit trail for what Claude was told</td>
+						<td>Git history shows every context change and who made it</td>
+					</tr>
+				</tbody>
+			</table>
+		</div>
+	</section>
+
+	<hr class="section-divider" />
+
+	<!-- Standards & compliance -->
+	<section class="section">
+		<p class="section-label">For regulated industries</p>
+		<h2>The standard and the system it governs never meet</h2>
+		<p class="section-intro">Governance frameworks like CHAI, HIPAA, and SOC2 are written for human readers. AI systems run on structured data and explicit constraints. Nothing connects the two — until now. SCS includes a dedicated standards bundle type so that governance requirements travel directly from the standards body to the AI agent, intact and versioned.</p>
+		<div class="standards-grid">
+			<div class="standard-item">
+				<p class="standard-name">CHAI T&amp;E Framework</p>
+				<p class="standard-desc">15 requirements across fairness, accuracy, scope, and transparency — transposed into a machine-readable reference bundle.</p>
+				<a href="/blog/standards-gap-ai-governance" class="card-link">Read the article &rarr;</a>
+			</div>
+			<div class="standard-item">
+				<p class="standard-name">Prior authorization AI</p>
+				<p class="standard-desc">What changes when your coding agent has the compliance framework in its context before writing a line of criteria-matching logic.</p>
+				<a href="/blog/compliance-framework-coding-agent" class="card-link">Read the article &rarr;</a>
+			</div>
+			<div class="standard-item">
+				<p class="standard-name">HIPAA · NIST · SOC2</p>
+				<p class="standard-desc">Standards bundles are composable. A prior auth agent can load CHAI, HIPAA, NIST cybersecurity controls, and internal policy as a single unified governance stack.</p>
+				<a href="/docs/specification/overview" class="card-link">See the spec &rarr;</a>
+			</div>
+			<div class="standard-item">
+				<p class="standard-name">Reference implementation</p>
+				<p class="standard-desc">The CHAI standards bundle is open source in the SCS repository — a working example of what a governance standard looks like when an AI agent can actually use it.</p>
+				<a
+					href="https://github.com/tim-mccrimmon/structured-context-spec"
+					class="card-link"
+					target="_blank"
+					rel="noopener"
+				>View on GitHub &rarr;</a>
+			</div>
+		</div>
+	</section>
+
+	<hr class="section-divider" />
+
+	<!-- Recent blog posts -->
+	{recentPosts.length > 0 && (
+		<section class="section">
+			<p class="section-label">From the blog</p>
+			<h2>On context engineering</h2>
+			<div class="recent-posts" style="margin-top: 1.5rem;">
+				{recentPosts.map(post => (
+					<div class="recent-post">
+						<a href={`/blog/${post.id}`} class="recent-post-inner">
+							{post.data.image && (
+								<img
+									src={post.data.image}
+									alt={post.data.imageAlt ?? ''}
+									class="recent-post-thumb"
+								/>
+							)}
+							<div>
+								<h3>{post.data.title}</h3>
+								<span class="meta">
+									{post.data.date.toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' })}
+								</span>
+								<p>{post.data.description}</p>
+							</div>
+						</a>
+					</div>
+				))}
+			</div>
+			<p style="margin-top: 1.5rem;">
+				<a href="/blog">All articles &rarr;</a>
+			</p>
+		</section>
+	)}
+
+	{recentPosts.length > 0 && <hr class="section-divider" />}
+
+	<!-- Docs quick access -->
+	<section class="section">
+		<p class="section-label">Documentation</p>
+		<h2>Reference and guides</h2>
+		<div class="docs-links" style="margin-top: 1.5rem;">
+			<a href="/docs/plugins/scs-vibe" class="docs-link">
+				Plugin: scs-vibe
+				<span>Install, configure, outputs</span>
+			</a>
+			<a href="/docs/plugins/scs-team" class="docs-link">
+				Plugin: scs-team
+				<span>Team setup, doc ingestion</span>
+			</a>
+			<a href="/docs/specification/overview" class="docs-link">
+				Specification
+				<span>Bundle types, SCD format</span>
+			</a>
+			<a href="/docs/examples/solo-developer" class="docs-link">
+				Examples
+				<span>Solo, team, and domain setups</span>
+			</a>
+		</div>
+	</section>
+
+	<hr class="section-divider" />
+
+	<!-- Footer star CTA -->
+	<section class="section" style="padding-top: 3rem; padding-bottom: 3rem;">
+		<StarCTA />
+	</section>
+
+	<SiteFooter />
+</BaseLayout>

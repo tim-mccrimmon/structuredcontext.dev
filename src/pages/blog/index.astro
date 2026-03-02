@@ -1,0 +1,56 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Nav from '../../components/Nav.astro';
+import SubstackEmbed from '../../components/SubstackEmbed.astro';
+import SiteFooter from '../../components/SiteFooter.astro';
+import { getCollection } from 'astro:content';
+
+const allPosts = await getCollection('blog', ({ data }) => !data.draft);
+const posts = allPosts.sort((a, b) => b.data.date.getTime() - a.data.date.getTime());
+---
+
+<BaseLayout
+	title="Blog"
+	description="Articles on context engineering, AI development practices, and the SCS specification."
+>
+	<Nav />
+	<div class="blog-listing">
+		<h1>Blog</h1>
+		{posts.length === 0 ? (
+			<p style="color: var(--color-text-muted);">No posts yet. Check back soon.</p>
+		) : (
+			<div class="post-list">
+				{posts.map(post => (
+					<article class="post-card">
+						<a href={`/blog/${post.id}`} class="post-card-inner">
+							{post.data.image && (
+								<img
+									src={post.data.image}
+									alt={post.data.imageAlt ?? ''}
+									class="post-thumb"
+								/>
+							)}
+							<div class="post-card-body">
+								<h2>{post.data.title}</h2>
+								<div class="post-meta">
+									<time datetime={post.data.date.toISOString()}>
+										{post.data.date.toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' })}
+									</time>
+									{post.data.tags.length > 0 && (
+										<span> &middot; {post.data.tags.join(', ')}</span>
+									)}
+								</div>
+								<p class="post-excerpt">{post.data.description}</p>
+							</div>
+						</a>
+					</article>
+				))}
+			</div>
+		)}
+
+		<div style="margin-top: 3rem; max-width: 480px;">
+			<SubstackEmbed />
+		</div>
+	</div>
+	<SiteFooter />
+</BaseLayout>

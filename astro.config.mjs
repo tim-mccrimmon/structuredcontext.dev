@@ -51,34 +51,37 @@ export default defineConfig({
 			],
 			sidebar: [
 				{
-					label: 'Get Started',
+					label: 'Plugins',
 					items: [
-						{ label: 'What is SCS?', link: '/' },
-						{ label: 'Quick Start', slug: 'getting-started/quick-start' },
-						{ label: 'FAQ', slug: 'getting-started/faq' },
-					],
-				},
-				{
-					label: 'Using SCS',
-					items: [
-						{ label: 'Workflow', slug: 'guides/workflow' },
-						{ label: 'CLI Reference', slug: 'guides/cli-reference' },
+						{ label: 'Overview', slug: 'docs' },
+						{ label: 'scs-vibe', slug: 'docs/plugins/scs-vibe' },
+						{ label: 'scs-team', slug: 'docs/plugins/scs-team' },
+						{ label: 'Plugin Reference', slug: 'docs/plugins/reference' },
 					],
 				},
 				{
 					label: 'Specification',
 					items: [
-						{ label: 'Overview', slug: 'specification/overview' },
-						{ label: 'v0.3 (Current)', slug: 'specification/v0-3' },
-						{ label: 'Bundle Format', slug: 'specification/bundle-format' },
-						{ label: 'SCD Format', slug: 'specification/scd-format' },
+						{ label: 'Overview', slug: 'docs/specification/overview' },
+						{ label: 'v0.3 (Current)', slug: 'docs/specification/v0-3' },
+						{ label: 'Bundle Format', slug: 'docs/specification/bundle-format' },
+						{ label: 'SCD Format', slug: 'docs/specification/scd-format' },
+					],
+				},
+				{
+					label: 'Examples',
+					items: [
+						{ label: 'Solo Developer', slug: 'docs/examples/solo-developer' },
+						{ label: 'Team Setup', slug: 'docs/examples/team-setup' },
+						{ label: 'Healthcare Bundle', slug: 'docs/examples/healthcare-bundle' },
 					],
 				},
 				{
 					label: 'Community',
 					items: [
-						{ label: 'Contributing', slug: 'community/contributing' },
-						{ label: 'Examples', slug: 'community/examples' },
+						{ label: 'Contributing', slug: 'docs/community/contributing' },
+						{ label: 'RFC Process', slug: 'docs/community/rfc-process' },
+						{ label: 'Open Questions', slug: 'docs/community/open-questions' },
 						{ label: 'Discussions', link: 'https://github.com/tim-mccrimmon/structured-context-spec/discussions' },
 					],
 				},
