@@ -517,6 +517,18 @@ a:hover {
 	padding: 0;
 }
 
+.prose img {
+	max-width: 100%;
+	height: auto;
+}
+
+.prose img.diagram {
+	display: block;
+	width: 60%;
+	max-width: 480px;
+	margin: 1.5rem auto;
+}
+
 .article-footer {
 	margin-top: 3rem;
 	padding-top: 2rem;
