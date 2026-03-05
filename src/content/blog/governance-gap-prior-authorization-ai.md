@@ -8,7 +8,7 @@ image: "/blog/governance-gap-prior-authorization-ai.png"
 imageAlt: "A structured context stack with a healthcare shield representing governed AI criteria for prior authorization workflows"
 ---
 
-**Update, March 4 2026:** A senior member of the Da Vinci project read this article and flagged several technical inaccuracies in my description of the four-IG stack. I've corrected them. The core argument is unchanged; the Da Vinci mechanics are now more accurate. I'm grateful for the corrections and clarifications — that's exactly how it's supposed to work in the standards community.
+**Update, March 4 2026:** A subject matter expert reviewed this article and flagged several technical inaccuracies in my description of the Da Vinci four-IG stack. I've corrected them. The core argument is unchanged; the Da Vinci mechanics are now more accurate. I'm grateful for the engagement.
 
 ---
 
