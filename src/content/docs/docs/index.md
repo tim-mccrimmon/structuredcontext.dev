@@ -13,9 +13,6 @@ how you work:
 - **[scs-team](/docs/plugins/scs-team/)** — Team with existing documentation. Processes your PRDs,
   architecture docs, and compliance requirements into structured context.
 
-Both plugins are available now in the
-[plugins directory on GitHub](https://github.com/tim-mccrimmon/structured-context-spec/tree/main/plugins).
-
 ## What SCS produces
 
 SCS outputs plain files that live in your repo and that Claude Code reads automatically:

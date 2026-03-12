@@ -9,8 +9,8 @@ scs-team processes your existing team documentation — PRDs, architecture decis
 security policies, compliance checklists — into structured context that every team member's
 Claude instance loads automatically.
 
-**Install**: Available in the
-[plugins directory on GitHub](https://github.com/tim-mccrimmon/structured-context-spec/tree/main/plugins/scs-team).
+**Install**: Available on
+[GitHub](https://github.com/tim-mccrimmon/scs-team).
 
 ## Quick start
 

@@ -8,8 +8,8 @@ description: SCS plugin for solo developers and small projects. Generate structu
 scs-vibe is a Claude Code plugin that scans your project, asks a few targeted questions,
 and generates structured context Claude uses every session.
 
-**Install**: Available in the
-[plugins directory on GitHub](https://github.com/tim-mccrimmon/structured-context-spec/tree/main/plugins/scs-vibe).
+**Install**: Available on
+[GitHub](https://github.com/tim-mccrimmon/scs-vibe).
 
 ## Quick start
 

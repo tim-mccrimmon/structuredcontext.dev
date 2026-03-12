@@ -45,5 +45,4 @@ plain Markdown — there's no separate config format.
 
 ---
 
-Full source and issue tracker:
-[github.com/tim-mccrimmon/structured-context-spec/plugins](https://github.com/tim-mccrimmon/structured-context-spec/tree/main/plugins)
+Full source: [scs-vibe](https://github.com/tim-mccrimmon/scs-vibe) · [scs-team](https://github.com/tim-mccrimmon/scs-team)
