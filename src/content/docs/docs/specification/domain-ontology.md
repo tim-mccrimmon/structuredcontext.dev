@@ -9,8 +9,7 @@ domain's work, how those concepts relate to each other, and which standards each
 satisfies.
 
 SCS 0.5.0 is a breaking change from 0.3. See the
-[migration guide](https://github.com/tim-mccrimmon/structured-context-spec/blob/main/docs/MIGRATION-0.5.0.md)
-if you have 0.3 content.
+[migration guide](/docs/specification/migration-0-5/) if you have 0.3 content.
 
 ## Why it replaced "concern"
 
@@ -135,4 +134,5 @@ The full example, including all 12 CDMO concepts and their relationships, is in
 
 - [Specification Overview](/docs/specification/overview/)
 - [Bundle Format](/docs/specification/bundle-format/)
+- [Migration Guide: 0.3 → 0.5.0](/docs/specification/migration-0-5/)
 - [View full spec on GitHub](https://github.com/tim-mccrimmon/structured-context-spec)
