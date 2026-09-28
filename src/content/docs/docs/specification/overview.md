@@ -10,7 +10,7 @@ It's the format that SCS plugins generate — you don't need to write it by hand
 understanding the structure helps when working with complex projects.
 
 **Current Version**: [v0.5.0](/docs/specification/v0-5/) — a breaking change from v0.3, see
-the [migration guide](https://github.com/tim-mccrimmon/structured-context-spec/blob/main/docs/MIGRATION-0.5.0.md)
+the [migration guide](/docs/specification/migration-0-5/)
 
 ## Core concepts
 
