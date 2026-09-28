@@ -63,13 +63,9 @@ export default defineConfig({
 					label: 'Specification',
 					items: [
 						{ label: 'Overview', slug: 'docs/specification/overview' },
-<<<<<<< HEAD
 						{ label: 'v0.5 (Current)', slug: 'docs/specification/v0-5' },
-						{ label: 'v0.3 (Previous)', slug: 'docs/specification/v0-3' },
-=======
-						{ label: 'v0.3 (Current)', slug: 'docs/specification/v0-3' },
 						{ label: 'Domain Ontology (0.5.0)', slug: 'docs/specification/domain-ontology' },
->>>>>>> origin/main
+						{ label: 'v0.3 (Previous)', slug: 'docs/specification/v0-3' },
 						{ label: 'Bundle Format', slug: 'docs/specification/bundle-format' },
 						{ label: 'SCD Format', slug: 'docs/specification/scd-format' },
 					],
