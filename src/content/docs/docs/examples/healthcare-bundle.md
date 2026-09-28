@@ -18,9 +18,9 @@ bundle:prior-auth-app:DRAFT          # Project bundle (AI entry point)
   ↓ imports
 bundle:acme-health-corp:1.0.0        # Domain bundle (company aggregator)
   ↓ imports
-bundle:acme-architecture:1.0.0       # Concern bundle (architecture standards)
-bundle:acme-security:1.0.0           # Concern bundle (security standards)
-bundle:acme-clinical:1.0.0           # Concern bundle (clinical workflows)
+bundle:acme-architecture:1.0.0       # Concept bundle (architecture standards)
+bundle:acme-security:1.0.0           # Concept bundle (security standards)
+bundle:acme-clinical:1.0.0           # Concept bundle (clinical workflows)
   ↓ imports
 bundle:hipaa:1.0.0                   # Standards bundle (HIPAA requirements)
   ↓ imports
@@ -61,6 +61,15 @@ When a developer opens Claude Code on this project, Claude loads:
 - Project-specific API patterns and conventions
 
 All from structured, versioned files that the team reviews and maintains together.
+
+## Medical-device manufacturers: a different ontology
+
+This example models a healthcare software company under HIPAA. A **medical-device CDMO** —
+a contract design & manufacturing organization building under ISO 13485, IEC 62304, and
+FDA 21 CFR 820 — has a different set of concepts: risk management, system architecture,
+verification & validation, supplier qualification, and more. SCS 0.5.0 ships a reference
+[Domain Ontology](/docs/specification/domain-ontology/) for that market, with each concept
+mapped to the regulatory clause it satisfies.
 
 ## Next steps
 

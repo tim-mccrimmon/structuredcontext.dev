@@ -42,7 +42,7 @@ context that Claude Code can reason about precisely.
 The same outputs as scs-vibe, structured for team use:
 
 - `CLAUDE.md` — Shared project context, committed to the team repo
-- `.claude/rules/` — Modular rules organized by concern
+- `.claude/rules/` — Modular rules organized by concept
 
 When a team member runs Claude Code on the project, they get the same context as everyone
 else. No more divergent outputs from different prompting styles.

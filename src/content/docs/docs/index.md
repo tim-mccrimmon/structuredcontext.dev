@@ -18,7 +18,7 @@ how you work:
 SCS outputs plain files that live in your repo and that Claude Code reads automatically:
 
 - `CLAUDE.md` — Primary context file, loaded every session
-- `.claude/rules/` — Modular rule files organized by concern
+- `.claude/rules/` — Modular rule files organized by concept
 
 No middleware. No new toolchain. Just files in git.
 
@@ -27,6 +27,8 @@ No middleware. No new toolchain. Just files in git.
 If you want to understand the underlying format:
 
 - [Specification Overview](/docs/specification/overview/) — Bundle types, SCD tiers, validation
-- [v0.3 Changelog](/docs/specification/v0-3/)
+- [v0.5.0 Changelog](/docs/specification/v0-5/) — Current version
+- [Domain Ontology](/docs/specification/domain-ontology/) — Concepts, taxonomy, and relationships that replace "concern"
+- [v0.3 Changelog](/docs/specification/v0-3/) — Previous version
 - [Bundle Format](/docs/specification/bundle-format/)
 - [SCD Format](/docs/specification/scd-format/)
