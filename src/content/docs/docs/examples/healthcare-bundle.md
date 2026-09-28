@@ -68,8 +68,8 @@ This example models a healthcare software company under HIPAA. A **medical-devic
 a contract design & manufacturing organization building under ISO 13485, IEC 62304, and
 FDA 21 CFR 820 — has a different set of concepts: risk management, system architecture,
 verification & validation, supplier qualification, and more. SCS 0.5.0 ships a reference
-[Domain Ontology](/docs/specification/domain-ontology/) for that market, with each concept
-mapped to the regulatory clause it satisfies.
+[Domain Ontology](/docs/specification/domain-ontology/) for that market, with its regulatory
+concepts mapped to the standards they satisfy.
 
 ## Next steps
 
