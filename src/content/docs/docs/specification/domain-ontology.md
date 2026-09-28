@@ -3,8 +3,6 @@ title: Domain Ontology
 description: The Domain Ontology (SCS 0.5.0) — concepts, taxonomy, and typed relationships that replace the flat "concern" list.
 ---
 
-## Domain Ontology
-
 The **Domain Ontology** is the headline feature of SCS 0.5.0. It replaces the flat
 `concerns` list from SCS 0.3 with a structured model of the concepts that organize a
 domain's work, how those concepts relate to each other, and which standards each one
@@ -77,7 +75,7 @@ Three reference ontologies ship with 0.5.0, one per type of business:
 | **Medical-Device CDMO** | 12 | Regulated medical-device contract manufacturers |
 | **Merchant Cash Advance (MCA)** | 16 | Business funding / merchant cash advance |
 
-The MCA ontology's 16 concepts span three clusters — industry-native, infrastructure, and a
+The MCA ontology's 16 concepts span three clusters — MCA-native, infrastructure, and a
 universal AI-governance layer. It's best-practice AI governance rather than a compliance
 mapping, so it carries relationships but no `satisfies`.
 
