@@ -40,7 +40,7 @@ CLAUDE.md
 ```
 
 `CLAUDE.md` contains the high-level project context. The rule files in `.claude/rules/`
-contain more specific guidance organized by concern.
+contain more specific guidance organized by concept.
 
 ## Committing context
 

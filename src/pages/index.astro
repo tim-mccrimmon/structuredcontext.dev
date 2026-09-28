@@ -135,6 +135,28 @@ const recentPosts = allPosts
 
 	<hr class="section-divider" />
 
+	<!-- Domain Ontology -->
+	<section class="section">
+		<p class="section-label">New in SCS 0.5.0</p>
+		<h2>Your domain, modeled as a graph — not a flat list</h2>
+		<p class="section-intro">
+			SCS 0.5.0 replaces the flat "concerns" list with the <strong>Domain Ontology</strong>:
+			concepts, an optional taxonomy, and typed relationships (<code>depends-on</code>,
+			<code>relates-to</code>, <code>satisfies</code>) between them. Each concept can map to
+			the standard it exists to satisfy, so "does our context cover this requirement?" becomes
+			a machine-answerable question instead of something you answer by reading prose.
+		</p>
+		<p class="section-intro" style="margin-top: 1rem;">
+			Three reference ontologies ship with 0.5.0: software development, medical-device CDMO,
+			and merchant cash advance / business funding.
+		</p>
+		<p style="margin-top: 1.5rem;">
+			<a href="/docs/specification/domain-ontology" class="card-link">Read the Domain Ontology spec &rarr;</a>
+		</p>
+	</section>
+
+	<hr class="section-divider" />
+
 	<!-- Standards & compliance -->
 	<section class="section">
 		<p class="section-label">For regulated industries</p>

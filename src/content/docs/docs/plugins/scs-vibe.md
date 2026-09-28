@@ -40,7 +40,7 @@ The primary context file. Claude Code reads this at the start of every session. 
 
 ### `.claude/rules/`
 
-Modular rule files that extend `CLAUDE.md`. Organized by concern — architecture, security,
+Modular rule files that extend `CLAUDE.md`. Organized by concept — architecture, security,
 testing, and any domain-specific rules you define.
 
 Both outputs are plain Markdown files. Commit them to your repo and version them like code.
