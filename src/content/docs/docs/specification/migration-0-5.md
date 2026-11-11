@@ -5,6 +5,13 @@ description: How to migrate SCS 0.3 content to 0.5.0 — the Domain Ontology, pr
 
 ## Overview
 
+:::note[Later versions]
+This guide takes 0.3 content to 0.5.0. To reach the current version, continue with
+[0.5 → 0.6.0](/docs/specification/migration-0-6/) and then
+[0.6 → 0.7.0](/docs/specification/migration-0-7/). Standards bundles, which this guide still
+uses, were deprecated in 0.6.0.
+:::
+
 SCS 0.5.0 replaces the 0.3 **concern** model with the
 [Domain Ontology](/docs/specification/domain-ontology/): a domain-defined set of
 **concepts**, with an optional shallow taxonomy, a small fixed set of typed relationships,

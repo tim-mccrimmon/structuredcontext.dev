@@ -13,20 +13,20 @@ const recentPosts = allPosts
 
 <BaseLayout
 	title="Structured Context Specification"
-	description="Give your AI coding assistant the context it needs to work with your system — not against it. SCS plugins for Claude Code take 15 minutes to set up."
+	description="SCS is an open specification for the guidance, guardrails, and facts an organization wants its AI to work from. AI drafts and maintains it through Agent Skills; a named person releases every version."
 >
 	<Nav />
 
 	<!-- Hero -->
 	<section class="hero">
-		<p class="hero-eyebrow">Open Specification · Apache 2.0</p>
-		<h1>Stop fighting your AI coding assistant</h1>
+		<p class="hero-eyebrow">Open Specification · Apache 2.0 · v0.7.0</p>
+		<h1>Use AI to create and manage guidance for AI</h1>
 		<p class="hero-subhead">
-			SCS gives Claude Code the context it needs to work with your system instead of against it.
-			Structured, versioned, git-native. Set up in 15 minutes.
+			SCS is an open standard for the rules and facts your organization wants its AI to work from.
+			An AI assistant drafts and maintains them with you. A named person releases every version.
 		</p>
 		<div class="hero-ctas">
-			<a href="/plugins/scs-vibe" class="btn btn-primary">Try the Plugin</a>
+			<a href="/docs/getting-started/quick-start" class="btn btn-primary">Get Started</a>
 			<a
 				href="https://github.com/tim-mccrimmon/structured-context-spec"
 				class="btn btn-secondary"
@@ -40,118 +40,172 @@ const recentPosts = allPosts
 
 	<hr class="section-divider" />
 
-	<!-- Video Demos -->
-	<section class="section">
-		<p class="section-label">See it in action</p>
-		<h2>Two plugins. Two minutes each.</h2>
-		<div class="video-grid" style="margin-top: 2rem;">
-			<div class="video-card">
-				<div class="video-embed">
-					<iframe
-						src="https://www.youtube.com/embed/boO86wbPoqI"
-						title="SCS Vibe Demo"
-						allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-						allowfullscreen
-					></iframe>
-				</div>
-				<h3>scs-vibe — Solo Developer</h3>
-				<p>
-					Point it at a PRD or existing project. SCS Vibe scans what's there, asks a few questions,
-					and generates structured context Claude uses every session.
-				</p>
-				<a href="/plugins/scs-vibe" class="card-link">Install scs-vibe &rarr;</a>
-			</div>
-			<div class="video-card">
-				<div class="video-embed">
-					<iframe
-						src="https://www.youtube.com/embed/s8rj-fD1MVs"
-						title="SCS Team Demo"
-						allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-						allowfullscreen
-					></iframe>
-				</div>
-				<h3>scs-team — Teams with Docs</h3>
-				<p>
-					Transform your existing PRDs, architecture docs, and compliance checklists into structured
-					context so Claude gets the full picture before writing a line of code.
-				</p>
-				<a href="/plugins/scs-team" class="card-link">Install scs-team &rarr;</a>
-			</div>
-		</div>
-	</section>
-
-	<hr class="section-divider" />
-
 	<!-- The Problem -->
 	<section class="section">
 		<p class="section-label">The problem</p>
-		<h2>Claude is good. But it doesn't know your system.</h2>
-		<p class="section-intro">Every session starts fresh. Claude improvises from training data — not your patterns, your constraints, or your team's decisions. The result:</p>
+		<h2>Without written guidance, AI will assume, often wrongly</h2>
+		<p class="section-intro">AI is like a capable new hire on every task: it doesn't know your rules unless someone tells it. Unlike a new hire, it rarely stops to ask.</p>
 		<ul class="problem-list">
-			<li>Generated code that conflicts with your existing architecture</li>
-			<li>Repeated mistakes you've already corrected</li>
-			<li>Context that drifts across sessions, agents, and team members</li>
-			<li>No way to version, review, or audit what you've told your AI</li>
+			<li>A wrong assumption reads just like a right one, so it's hard to spot</li>
+			<li>Each agent has been told something different, or nothing at all, so people on the same project get different answers</li>
+			<li>The unwritten rules people rely on never reach the AI</li>
+			<li>When something goes wrong, there's often no clear answer to which rules applied</li>
 		</ul>
-		<p class="section-intro" style="margin-top: 1.5rem;">SCS treats context as a first-class artifact — structured, versioned, and git-native, the same way your code is.</p>
 	</section>
 
 	<hr class="section-divider" />
 
-	<!-- Claude Code alignment -->
+	<!-- Guardrails vs state data -->
 	<section class="section">
-		<p class="section-label">Why it works with Claude Code</p>
-		<h2>Built for the tools you're already using</h2>
-		<p class="section-intro">SCS outputs exactly what Claude Code reads: <code>CLAUDE.md</code> and <code>.claude/rules/</code>. No middleware, no new toolchain.</p>
-		<div style="overflow-x: auto;">
+		<p class="section-label">What SCS covers</p>
+		<h2>It's all context, but not all context is the same</h2>
+		<div style="overflow-x: auto; margin-top: 1.5rem;">
 			<table class="comparison-table">
 				<thead>
 					<tr>
-						<th>Without SCS</th>
-						<th>With SCS</th>
+						<th></th>
+						<th>Guardrails (SCS)</th>
+						<th>State data</th>
 					</tr>
 				</thead>
 				<tbody>
 					<tr>
-						<td>Context lives in ad-hoc prompts and scattered notes</td>
-						<td>Context is a versioned YAML artifact in your repo</td>
+						<td>What it is</td>
+						<td>Guidance, rules, and supporting facts</td>
+						<td>Current data: a record, an order, a document</td>
 					</tr>
 					<tr>
-						<td>Each session starts from scratch</td>
-						<td>Claude loads structured context from <code>CLAUDE.md</code> every session</td>
+						<td>How it changes</td>
+						<td>Rarely and deliberately, by a new version</td>
+						<td>Frequently</td>
 					</tr>
 					<tr>
-						<td>Team members give Claude different instructions</td>
-						<td>Context is shared, reviewable, and consistent across the team</td>
+						<td>How AI gets it</td>
+						<td>Supplied up front, with every request</td>
+						<td>Looked up when needed, for example with retrieval</td>
 					</tr>
 					<tr>
-						<td>No audit trail for what Claude was told</td>
-						<td>Git history shows every context change and who made it</td>
+						<td>Accountability</td>
+						<td>A named approver</td>
+						<td>The source system</td>
 					</tr>
 				</tbody>
 			</table>
 		</div>
+		<p class="section-intro" style="margin-top: 1.5rem;">Retrieval handles data that changes often. SCS handles the rules that should be the same from one question to the next. They work together.</p>
 	</section>
 
 	<hr class="section-divider" />
 
-	<!-- Domain Ontology -->
+	<!-- How it works -->
 	<section class="section">
-		<p class="section-label">New in SCS 0.5.0</p>
-		<h2>Your domain, modeled as a graph — not a flat list</h2>
-		<p class="section-intro">
-			SCS 0.5.0 replaces the flat "concerns" list with the <strong>Domain Ontology</strong>:
-			concepts, an optional taxonomy, and typed relationships (<code>depends-on</code>,
-			<code>relates-to</code>, <code>satisfies</code>) between them. Each concept can map to
-			the standard it exists to satisfy, so "does our context cover this requirement?" becomes
-			a machine-answerable question instead of something you answer by reading prose.
-		</p>
-		<p class="section-intro" style="margin-top: 1rem;">
-			Three reference ontologies ship with 0.5.0: software development, medical-device CDMO,
-			and merchant cash advance / business funding.
-		</p>
+		<p class="section-label">How it works</p>
+		<h2>Your rules, approved, in one small file</h2>
+		<div class="card-grid" style="margin-top: 1.5rem;">
+			<div class="card">
+				<h3>Two levels</h3>
+				<p>A <strong>Domain</strong> holds the rules for all of your organization's work. A <strong>Project</strong> holds the rules for one piece of work. Projects can add rules but never loosen the Domain's.</p>
+			</div>
+			<div class="card">
+				<h3>A person releases</h3>
+				<p>Long policies are distilled into prohibitions, directives, and facts. Each section names the role accountable for it. A named person releases each version as a git tag with a content digest.</p>
+			</div>
+			<div class="card">
+				<h3>One file for the AI</h3>
+				<p>Each version compiles to a small, deterministic file. Every rule has a stable ID, so an agent can name the rule it applied.</p>
+			</div>
+		</div>
 		<p style="margin-top: 1.5rem;">
-			<a href="/docs/specification/domain-ontology" class="card-link">Read the Domain Ontology spec &rarr;</a>
+			<a href="/docs/specification/overview" class="card-link">Read the specification overview &rarr;</a>
+		</p>
+	</section>
+
+	<hr class="section-divider" />
+
+	<!-- Skills -->
+	<section class="section">
+		<p class="section-label">New in SCS 0.7.0</p>
+		<h2>Four skills cover every step</h2>
+		<p class="section-intro">Writing and maintaining these rules by hand was the hard part. In 0.7.0, four Agent Skills take you from interview to a compiled version through conversation. You don't need to learn the spec first.</p>
+		<div style="overflow-x: auto; margin-top: 1.5rem;">
+			<table class="comparison-table">
+				<thead>
+					<tr>
+						<th>Skill</th>
+						<th>What it does for you</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<td><code>scs-domain</code></td>
+						<td>Sets up and maintains the rules for all of your organization's work, from interview to publish</td>
+					</tr>
+					<tr>
+						<td><code>scs-project</code></td>
+						<td>Adds rules for one piece of work, building on the Domain's</td>
+					</tr>
+					<tr>
+						<td><code>scs-validate</code></td>
+						<td>Runs the checks, explains the results, and proposes fixes</td>
+					</tr>
+					<tr>
+						<td><code>scs-explain</code></td>
+						<td>Explains any rule, where it came from, or a message, and writes a review package for reviewers</td>
+					</tr>
+				</tbody>
+			</table>
+		</div>
+		<p class="section-intro" style="margin-top: 1.5rem;">The skills show each proposed change and wait for a yes before making it. They never choose who releases a version. They use the open Agent Skills format and have been tried in Claude Code and Claude.</p>
+		<p style="margin-top: 1rem;">
+			<a href="/skills" class="card-link">About the skills &rarr;</a>
+		</p>
+	</section>
+
+	<hr class="section-divider" />
+
+	<!-- Audit trail -->
+	<section class="section">
+		<p class="section-label">Audit trail and provenance</p>
+		<h2>Know which rules applied, and why</h2>
+		<p class="section-intro">The record lives in the same plain files as the rules, in your own git repository.</p>
+		<ul class="problem-list">
+			<li><strong>Who wrote it, and why:</strong> every SCD and bundle records its author and rationale</li>
+			<li><strong>Who owns it:</strong> every section names the role accountable for it, mapped to a person</li>
+			<li><strong>Who released it:</strong> every version names a person, never the AI</li>
+			<li><strong>What reviewers saw:</strong> a review package shows every rule word for word, with the line the AI receives</li>
+			<li><strong>Where it came from:</strong> rules trace back to the source documents and intake answers they were drafted from</li>
+			<li><strong>That nothing changed since:</strong> each version carries a content digest, so a later edit is detected. A formal approval in your own system can cite the same digest, which the compiled artifact also carries</li>
+			<li><strong>What changed:</strong> the tools summarize the differences between any two versions</li>
+		</ul>
+	</section>
+
+	<hr class="section-divider" />
+
+	<!-- Ontologies -->
+	<section class="section">
+		<p class="section-label">Domain Ontology</p>
+		<h2>Start from your industry, not a blank page</h2>
+		<p class="section-intro">Each ontology lists what an industry needs guardrails for. You fill it in with your own decisions.</p>
+		<div class="card-grid" style="margin-top: 1.5rem;">
+			<div class="card">
+				<h3>SDLC</h3>
+				<p>Software development</p>
+			</div>
+			<div class="card">
+				<h3>CDMO</h3>
+				<p>Medical-device contract design and manufacturing</p>
+			</div>
+			<div class="card">
+				<h3>MCA</h3>
+				<p>Merchant cash advance and business funding</p>
+			</div>
+			<div class="card">
+				<h3>Personal</h3>
+				<p>One person's own guidance. New in 0.7.0.</p>
+			</div>
+		</div>
+		<p style="margin-top: 1.5rem;">
+			<a href="/docs/specification/domain-ontology" class="card-link">Read about the Domain Ontology &rarr;</a>
 		</p>
 	</section>
 
@@ -160,37 +214,41 @@ const recentPosts = allPosts
 	<!-- Standards & compliance -->
 	<section class="section">
 		<p class="section-label">For regulated industries</p>
-		<h2>The standard and the system it governs never meet</h2>
-		<p class="section-intro">Governance frameworks like CHAI, HIPAA, and SOC2 are written for human readers. AI systems run on structured data and explicit constraints. Nothing connects the two — until now. SCS includes a dedicated standards bundle type so that governance requirements travel directly from the standards body to the AI agent, intact and versioned.</p>
+		<h2>Cite the standard. Keep your own interpretation.</h2>
+		<p class="section-intro">The text of most standards is licensed to the adopter, and the authoritative interpretation is your own quality system. So SCS holds your rules and cites the clause each one addresses, for example <code>std:iso-13485:2016#7.3.9</code>, without reproducing the standard.</p>
 		<div class="standards-grid">
 			<div class="standard-item">
-				<p class="standard-name">CHAI T&amp;E Framework</p>
-				<p class="standard-desc">15 requirements across fairness, accuracy, scope, and transparency — transposed into a machine-readable reference bundle.</p>
-				<a href="/blog/standards-gap-ai-governance" class="card-link">Read the article &rarr;</a>
+				<p class="standard-name">Citations</p>
+				<p class="standard-desc">Rules, facts, and ontology concepts can cite a standard, edition, and clause. Citing a clause records intent. It isn't a claim of compliance.</p>
+				<a href="/docs/specification/citations" class="card-link">How citations work &rarr;</a>
+			</div>
+			<div class="standard-item">
+				<p class="standard-name">Medical-device CDMO</p>
+				<p class="standard-desc">A worked example of Domain and Project governance for a manufacturer working under ISO 13485.</p>
+				<a href="/docs/examples/medtech-cdmo" class="card-link">See the example &rarr;</a>
 			</div>
 			<div class="standard-item">
 				<p class="standard-name">Prior authorization AI</p>
-				<p class="standard-desc">What changes when your coding agent has the compliance framework in its context before writing a line of criteria-matching logic.</p>
+				<p class="standard-desc">What changes when a coding agent has the compliance framework in its context before it writes criteria-matching logic.</p>
 				<a href="/blog/compliance-framework-coding-agent" class="card-link">Read the article &rarr;</a>
 			</div>
 			<div class="standard-item">
-				<p class="standard-name">HIPAA · NIST · SOC2</p>
-				<p class="standard-desc">Standards bundles are composable. A prior auth agent can load CHAI, HIPAA, NIST cybersecurity controls, and internal policy as a single unified governance stack.</p>
-				<a href="/docs/specification/overview" class="card-link">See the spec &rarr;</a>
-			</div>
-			<div class="standard-item">
-				<p class="standard-name">Reference implementation</p>
-				<p class="standard-desc">The CHAI standards bundle is open source in the SCS repository — a working example of what a governance standard looks like when an AI agent can actually use it.</p>
-				<a
-					href="https://github.com/tim-mccrimmon/structured-context-spec"
-					class="card-link"
-					target="_blank"
-					rel="noopener"
-				>View on GitHub &rarr;</a>
+				<p class="standard-name">Standards bodies</p>
+				<p class="standard-desc">Ontologies can map concepts to your clauses, and rules can cite them directly, without reproducing licensed text.</p>
+				<a href="mailto:info@ohana-tech.com" class="card-link">Get in touch &rarr;</a>
 			</div>
 		</div>
-		<p class="section-intro" style="margin-top: 2rem;">
-			If you represent a standards organization interested in publishing your framework in SCS format, <a href="mailto:info@ohana-tech.com">get in touch</a>.
+	</section>
+
+	<hr class="section-divider" />
+
+	<!-- Placement -->
+	<section class="section">
+		<p class="section-label">Not tied to one AI service</p>
+		<h2>Use the same approved rules wherever your teams work</h2>
+		<p class="section-intro">A compiled artifact is plain YAML. The placement guide describes where to put the Domain and Project artifacts in Claude, Claude Code, ChatGPT Enterprise, GitHub Copilot, and Cursor. AI services treat these files as context, not enforcement, so SCS gives you a clear record of what was approved and supplied, not a guarantee of model behavior.</p>
+		<p style="margin-top: 1.5rem;">
+			<a href="/docs/getting-started/placement" class="card-link">Read the placement guide &rarr;</a>
 		</p>
 	</section>
 
@@ -236,21 +294,21 @@ const recentPosts = allPosts
 		<p class="section-label">Documentation</p>
 		<h2>Reference and guides</h2>
 		<div class="docs-links" style="margin-top: 1.5rem;">
-			<a href="/docs/plugins/scs-vibe" class="docs-link">
-				Plugin: scs-vibe
-				<span>Install, configure, outputs</span>
+			<a href="/docs/getting-started/quick-start" class="docs-link">
+				Quick Start
+				<span>Install the tools and skills</span>
 			</a>
-			<a href="/docs/plugins/scs-team" class="docs-link">
-				Plugin: scs-team
-				<span>Team setup, doc ingestion</span>
+			<a href="/docs/skills/overview" class="docs-link">
+				Agent Skills
+				<span>The four skills and their rules</span>
 			</a>
 			<a href="/docs/specification/overview" class="docs-link">
 				Specification
-				<span>Bundle types, SCD format</span>
+				<span>Bundles, SCDs, versions, artifacts</span>
 			</a>
-			<a href="/docs/examples/solo-developer" class="docs-link">
+			<a href="/docs/examples/personal-domain" class="docs-link">
 				Examples
-				<span>Solo, team, and domain setups</span>
+				<span>Personal, organization, and CDMO</span>
 			</a>
 		</div>
 	</section>

@@ -8,6 +8,8 @@ image: "/blog/compliance-framework.png"
 imageAlt: "Isometric diagram showing standards documents and compliance frameworks connecting to AI systems"
 ---
 
+**Note, 2026-11-11:** As of SCS 0.7.0, the CHAI bundle is no longer among the repository's examples; it remains available at the [`v0.6.0` tag](https://github.com/tim-mccrimmon/structured-context-spec/tree/v0.6.0/examples/chai-standards-bundle). In 0.7.0, rules [cite standards](/docs/specification/citations/) rather than reproduce them.
+
 If you're building an AI system in a regulated space, the compliance requirements for that space probably live in your head. You've read the frameworks. You know what "fairness across patient populations" means in practice. When you sit down with a coding agent to build a prior authorization tool, you carry that knowledge.
 
 The coding agent doesn't.

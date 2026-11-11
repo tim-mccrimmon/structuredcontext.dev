@@ -1,126 +1,121 @@
 ---
 title: Specification Overview
-description: Technical overview of the Structured Context Specification (SCS v0.5.0).
+description: The SCS 0.7.0 model in one page. Domain and Project bundles, SCDs, versions, and the runtime artifact.
 ---
 
-## Structured Context Specification
+SCS defines how to write, validate, version, and compile structured context for AI
+systems. You don't need to write it by hand, since the [Agent Skills](/docs/skills/overview/)
+do that through the tools. Still, understanding the structure helps when you review what
+they produce.
 
-SCS defines how to create, validate, version, and deploy structured context for AI systems.
-It's the format that SCS plugins generate — you don't need to write it by hand, but
-understanding the structure helps when working with complex projects.
+**Current version:** [v0.7.0](/docs/specification/v0-7/). The full normative text is in the
+spec repository under [`spec/0.7/`](https://github.com/tim-mccrimmon/structured-context-spec/tree/main/spec/0.7).
 
-**Current Version**: [v0.5.0](/docs/specification/v0-5/) — a breaking change from v0.3, see
-the [migration guide](/docs/specification/migration-0-5/)
+## Two governance bundles
 
-## Core concepts
+| | Domain bundle | Project bundle |
+|---|---|---|
+| **Holds** | Rules for all of an owner's work | Rules for one piece of work |
+| **Owner** | An organization, or one person | The project's lead |
+| **Imports** | The published meta bundle and concept bundles | Concept bundles, or lists its SCDs directly |
+| **Workspace** | `domain/` | `projects/<name>/` |
 
-### Structured Context Documents (SCDs)
+Neither bundle imports the other. Each one is validated, versioned, and compiled on its
+own, and a runtime applies the two artifacts side by side, Domain first. A Project can add
+rules but can't lift a Domain prohibition. Changing a prohibition takes a new version of
+the Domain bundle.
 
-SCDs are YAML files containing structured context organized by tier:
+Deployments often call the Domain bundle the **Global** or organization bundle. It's the
+same bundle type, described for a different audience.
 
-- **Meta Tier** (`scd:meta:*`): SCS specification language itself
-- **Standards Tier** (`scd:standards:*`): External compliance requirements
-- **Project Tier** (`scd:project:*`): Company/project-specific context
+## Building blocks
 
-Some material describes coverage as "Corporate" and "Project" context, with "Personal"
-deferred — that's shorthand for the tiers above, not a fourth tier: "Corporate" is Meta Tier
-+ Standards Tier together, "Project" is Project Tier, and "Personal" has no schema tier and
-remains out of scope.
+### SCDs
 
-### Bundles
+A Structured Context Document (SCD) is a YAML file that covers one topic, such as design
+change control, confidential data, or writing style. The content that reaches an AI is in
+three lists:
 
-Bundles are versioned packages of SCDs with:
-- Unique ID (`bundle:<name>:<version>`)
-- Type (meta, standards, domain, concept, project)
-- List of SCDs
-- Imports (dependency bundles)
-- Provenance (who, when, why — plus who approved it, once versioned; see Validation, below)
+- **Prohibitions**: tools or practices that are forbidden, with no conditions
+- **Directives**: rules an agent is expected to follow
+- **Facts**: statements an agent should know
 
-### Bundle types
+An SCD can also carry a summary and rationale for the people who review it, citations of the
+standards it addresses, and provenance. See [SCD Format](/docs/specification/scd-format/).
 
-#### Meta Bundle
-- **What**: Universal SCS vocabulary
-- **Who**: SCS (platform owner)
-- **Cardinality**: 1 per ecosystem
-- **Example**: `bundle:meta:1.0.0`
+### Concept bundles
 
-#### Standards Bundle
-- **What**: External regulatory requirements
-- **Who**: Standards bodies (CHAI, NIST, AICPA)
-- **Cardinality**: Many (one per standard)
-- **Examples**: `bundle:hipaa:1.0.0`, `bundle:soc2:1.0.0`
+A concept bundle groups the SCDs for one concept in your
+[Domain Ontology](/docs/specification/domain-ontology/), such as risk management or
+security. An ontology for your industry (`sdlc`, `cdmo`, `mca`, or `personal`) is the
+template you start from.
 
-#### Domain Bundle
-- **What**: Company knowledge aggregator, importing one or more concept bundles per its
-  [Domain Ontology](/docs/specification/domain-ontology/)
-- **Who**: CTO/CIO
-- **Cardinality**: 1 per company
-- **Imports**: One or more concept bundles
-- **Example**: `bundle:acme-health-corp:1.0.0`
+Each concept bundle is a **section** with an owner: the role accountable for it, such as
+`quality` or `regulatory`, named in the bundle. The workspace's intake record names the person
+who holds each role, by name, with the email optional. A section can't be released until its
+role is held. A Project bundle that lists its SCDs directly is a section too.
 
-#### Concept Bundle
-- **What**: Functional area standards (leaf nodes), realizing one concept from the domain's
-  [Domain Ontology](/docs/specification/domain-ontology/) (was "concern" prior to v0.5.0)
-- **Who**: VPs/Directors (Architect, CISO, CMO, CDO)
-- **Cardinality**: Variable
-- **Examples**: `bundle:acme-architecture:1.0.0`, `bundle:acme-security:1.0.0`
+### Meta bundle
 
-#### Project Bundle
-- **What**: Individual initiative
-- **Who**: Product/Project Managers
-- **Cardinality**: Many (one per project)
-- **Imports**: Typically imports domain bundle
-- **Example**: `bundle:prior-auth-app:1.0.0`
+`bundle:meta` is published with the specification and ships with the tools. It tells an
+agent how Domain and Project rules combine, how to treat facts, to name the rule behind any
+refusal or change, and that a citation doesn't contain the cited standard's text.
 
-## Bundle hierarchy
+## Tiers
 
-```
-Project Bundle (AI uses this)
-  ↓ imports
-Domain Bundle (Company aggregator)
-  ↓ imports
-Concept Bundles (Architecture, Security, Clinical)
-  ↓ may import
-Standards Bundles (HIPAA, SOC2, CHAI)
-  ↓ imports
-Meta Bundle (SCS foundation)
-```
+SCD IDs carry a tier: `scd:meta:*` for the meta bundle and `scd:project:*` for everything an
+adopter writes, including organization-wide rules in a Domain bundle. The tier identifies who
+authors an SCD, not where it applies. Scope comes from the bundle that includes it. The
+standards tier is deprecated as of 0.6.0, and standards are now [citations](/docs/specification/citations/).
 
-## Validation
+## Domain repositories
 
-**DRAFT phase**: Loose validation. Validates YAML structure and bundle fields, but does not
-enforce required SCD content. Supports the full spectrum from minimal to fully-specified.
-`provenance.version_approved_by` / `version_approved_at` are not required at this phase.
+All of an owner's context lives in one git repository, `<name>-context/`: the Domain
+workspace under `domain/` and each Project under `projects/<name>/`. Application
+repositories that use the context are separate. See
+[Domain Repositories](/docs/specification/domain-repositories/).
 
-**Version phase**: Strict validation. All checks enforced before versioning. Immutable once
-published. A bundle's `provenance` must carry `version_approved_by` and
-`version_approved_at` before it can carry a real semantic version — who approved it, and
-when, not just who authored it.
+## Versions
 
-## Import resolution
+A bundle in progress has the version `DRAFT`. Releasing a version:
 
-When a bundle is deployed, imports are resolved recursively:
+1. commits the whole workspace,
+2. writes a snapshot and a version manifest that records the person who released it
+   (`Name <email>`) and a `content_digest` over the bundle's resolved content, and
+3. tags the commit `<workspace>/<bundle-name>-v<version>`.
 
-```
-Input: bundle:prior-auth:1.0.0
+Every import must be pinned to a released version first. `scs bundle release` does this in
+one command: it versions each changed concept bundle, pins it, and then versions the root.
+Validation checks each tag against its digest, so a version edited after release is detected.
+Released versions are never overwritten.
 
-Output (resolved):
-[
-  "bundle:prior-auth:1.0.0",           # Project
-  "bundle:acme-health-corp:1.0.0",     # Domain
-  "bundle:acme-architecture:1.0.0",    # Concept
-  "bundle:acme-security:1.0.0",        # Concept
-  "bundle:hipaa:1.0.0",                # Standards
-  "bundle:meta:1.0.0"                  # Meta
-]
-```
+Before a release, `scs view` writes a **review package**: one HTML file with every rule as the
+AI receives it, grouped by section with its owner, for people who review the content without
+using git.
 
-All SCDs from all bundles are combined and provided to AI systems.
+Releasing a version authorizes it into the repository. It isn't the organization's formal
+approval. Where context is approved in a quality or other management system, that happens
+there, and the approval record should cite the version and its content digest.
+
+## The runtime artifact
+
+`scs compile` turns a released version into one self-contained file: the prohibitions
+first, then the directives as `rules`, and the facts as `facts`, each with a stable ID such as
+`medtech/document-control/DOC-001`. The artifact contains no timestamps, authors, or
+paths, so the same approved source always produces the same bytes and the same SHA-256. A
+released version's artifact carries its content digest as `source_digest`. See
+[Runtime Artifact](/docs/specification/runtime-artifact/).
+
+## What SCS leaves out
+
+SCS ends at the approved version and the file an AI service receives. Storing, selecting,
+and delivering artifacts at runtime, enforcing rules, and recording what an agent did in a
+session are outside the specification. Those are natural places for products and
+integrations built on an open format.
 
 ## Next steps
 
-- [v0.5 (Current) Specification](/docs/specification/v0-5/)
-- [Domain Ontology](/docs/specification/domain-ontology/)
+- [What's new in v0.7.0](/docs/specification/v0-7/)
 - [Bundle Format](/docs/specification/bundle-format/)
 - [SCD Format](/docs/specification/scd-format/)
-- [View full spec on GitHub](https://github.com/tim-mccrimmon/structured-context-spec)
+- [Examples](/docs/examples/personal-domain/)

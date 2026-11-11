@@ -8,6 +8,8 @@ image: "/blog/beyond-guardrails.png"
 imageAlt: "A layered structured context stack with an authorized context shield defending against prompt injection attacks"
 ---
 
+**Note, 2026-11-11:** The security baseline bundle shown here is not included in the SCS repository as of 0.7.0, and its manifest uses the pre-0.5 `concern` bundle type. See the [current bundle format](/docs/specification/bundle-format/).
+
 Your coding agent is reviewing a pull request. One of the changed files is a configuration template. Embedded in a comment near the bottom:
 
 ```
