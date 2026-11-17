@@ -1,0 +1,115 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Nav from '../../components/Nav.astro';
+import StarCTA from '../../components/StarCTA.astro';
+import SiteFooter from '../../components/SiteFooter.astro';
+---
+
+<BaseLayout
+	title="SCS Agent Skills"
+	description="Four Agent Skills that let an AI assistant build, review, version, and compile your SCS context, with you confirming every change."
+>
+	<Nav />
+	<div class="plugin-page">
+		<div class="plugin-hero">
+			<p class="hero-eyebrow">New in SCS 0.7.0</p>
+			<h1>SCS Agent Skills</h1>
+			<p>
+				Four skills let an AI assistant build and maintain your guidance for AI. It runs the
+				interview, drafts the rules, reviews them, and versions and compiles them. You confirm
+				every change, and a person you name releases every version.
+			</p>
+			<div class="hero-ctas">
+				<a href="/docs/getting-started/quick-start" class="btn btn-primary">Install the Skills</a>
+				<a href="/docs/skills/overview" class="btn btn-secondary">Read the docs</a>
+			</div>
+		</div>
+
+		<section class="section" style="padding-left: 0; padding-right: 0;">
+			<h2>One workflow, with a person in charge</h2>
+			<p style="color: var(--color-text-muted); max-width: 60ch;">
+				Interview &rarr; Draft &rarr; Consolidate &rarr; Section owners and review package &rarr; Review &rarr; Release &rarr; Compile.
+				The skills carry the conversation and the judgment. The SCS tools do every write, and
+				each change is shown as a dry run before it's made.
+			</p>
+			<div class="card-grid" style="margin-top: 1.5rem;">
+				<div class="card">
+					<h3>scs-domain</h3>
+					<p>Sets up and maintains the rules for all of your organization's work, or your own, from interview to a compiled version.</p>
+				</div>
+				<div class="card">
+					<h3>scs-project</h3>
+					<p>Adds the rules for one piece of work, reviews them against the Domain, and never loosens the Domain's rules.</p>
+				</div>
+				<div class="card">
+					<h3>scs-validate</h3>
+					<p>Runs the automated checks at any time, explains the results in plain language, and proposes fixes.</p>
+				</div>
+				<div class="card">
+					<h3>scs-explain</h3>
+					<p>Explains where the work stands, a rule and where it came from, a compiled artifact, or a message. Writes a review package for the people who review a bundle.</p>
+				</div>
+			</div>
+		</section>
+
+		<hr class="section-divider" />
+
+		<section class="section" style="padding-left: 0; padding-right: 0;">
+			<h2>Get started</h2>
+			<div class="install-block">
+				<p>Install the tools</p>
+				<code>pip install https://github.com/tim-mccrimmon/structured-context-spec/releases/download/v0.7.1/scs_validator-0.7.1-py3-none-any.whl https://github.com/tim-mccrimmon/structured-context-spec/releases/download/v0.7.1/scs_tools-0.7.1-py3-none-any.whl</code>
+			</div>
+			<p style="color: var(--color-text-muted); font-size: 0.9rem; margin-top: 0.5rem; max-width: 60ch;">
+				The tools are installed from the <a href="https://github.com/tim-mccrimmon/structured-context-spec/releases">GitHub release</a>; SCS is not on PyPI.
+				Then copy the four skills from the spec repository's <code>skills/</code> directory into
+				Claude Code, or upload them to Claude (claude.ai). Python 3.11 or later and git are
+				required. The skills use an open format, but so far they have been tried only in
+				Claude Code and Claude.
+			</p>
+		</section>
+
+		<hr class="section-divider" />
+
+		<section class="section" style="padding-left: 0; padding-right: 0;">
+			<h2>What you can count on</h2>
+			<div class="card-grid" style="margin-top: 1.5rem;">
+				<div class="card">
+					<h3>You release</h3>
+					<p>The skills never choose who releases a version, never take one from git configuration, and never record the AI. Formal approval stays in your own system, citing the version and its digest.</p>
+				</div>
+				<div class="card">
+					<h3>You own it</h3>
+					<p>Your context is plain files in your own git repository, not locked into a vendor.</p>
+				</div>
+				<div class="card">
+					<h3>You can check it</h3>
+					<p>Every rule records where it came from, and every version carries a digest, so a later edit is detected.</p>
+				</div>
+				<div class="card">
+					<h3>Your reviewers can read it</h3>
+					<p>Each section names its owner. A review package shows every rule word for word, with the exact line the AI receives, in one HTML file.</p>
+				</div>
+			</div>
+		</section>
+
+		<hr class="section-divider" />
+
+		<section class="section" style="padding-left: 0; padding-right: 0;">
+			<h2>Coming from scs-vibe or scs-team?</h2>
+			<p style="color: var(--color-text-muted); max-width: 60ch;">
+				The plugins were removed in 0.7.0. They wrote context into application repositories,
+				while 0.7 keeps it in its own Domain repository with approved versions. Start a Domain with
+				<code>scs-domain</code> and give it your existing <code>CLAUDE.md</code> and rules files as
+				source documents.
+			</p>
+		</section>
+
+		<hr class="section-divider" />
+
+		<section class="section" style="padding-left: 0; padding-right: 0;">
+			<StarCTA />
+		</section>
+	</div>
+	<SiteFooter />
+</BaseLayout>

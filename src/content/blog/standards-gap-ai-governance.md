@@ -8,6 +8,8 @@ image: "/blog/standards-gap.png"
 imageAlt: "Isometric diagram showing AI standards documents flowing into structured data systems"
 ---
 
+**Note, 2026-11-11:** The "standards" bundle type described here was deprecated in SCS 0.6.0 in favor of [citations](/docs/specification/citations/), and the CHAI bundle is no longer among the 0.7.0 examples; it remains available at the [`v0.6.0` tag](https://github.com/tim-mccrimmon/structured-context-spec/tree/v0.6.0/examples/chai-standards-bundle).
+
 Standards bodies in healthcare AI are doing important, careful work. Organizations like the Coalition for Health AI (CHAI) bring together hundreds of experts — clinicians, payers, technologists, ethicists — to define how AI systems should behave in high-stakes settings. The output of that work is substantial: best practice guides, testing frameworks, consensus metrics developed over months of deliberation.
 
 But there's a structural disconnect between how these standards are published and how the AI systems they govern actually operate. Standards arrive as prose documents — PDFs, web pages, best practice guides written for human readers. AI agents operate on structured data, configuration, and explicit constraints. Nothing connects the two.

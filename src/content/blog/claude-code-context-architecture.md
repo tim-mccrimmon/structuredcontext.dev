@@ -8,6 +8,8 @@ image: "/blog/claude-code-context-architecture.png"
 imageAlt: "Layered isometric diagram showing Claude Code's context hierarchy — Enterprise Managed Policy at the base, Global in the middle, Project with CLAUDE.md and .claude/rules/ at the top"
 ---
 
+**Note, 2026-11-11:** The `scs-vibe` and `scs-team` plugins described here were removed in SCS 0.7.0 and replaced by four [Agent Skills](/skills).
+
 Every developer using Claude Code has written a CLAUDE.md file. Most wrote it by hand, from scratch, at the start of a new project — a few paragraphs about the stack, some preferences, maybe a note about patterns to avoid.
 
 It works, for a while. Then it drifts. A new developer joins and writes their own version. A refactor happens and nobody updates the file. Rules start conflicting. Claude gets inconsistent instructions and produces inconsistent results. More text gets added to fix it, and the file grows into something nobody reads carefully anymore.

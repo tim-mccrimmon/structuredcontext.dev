@@ -1,15 +1,14 @@
 ---
 title: Domain Ontology
-description: The Domain Ontology (SCS 0.5.0) — concepts, taxonomy, and typed relationships that replace the flat "concern" list.
+description: The Domain Ontology. Concepts, taxonomy, and typed relationships that organize a domain's context, with satisfies mappings to standard citations.
 ---
 
-The **Domain Ontology** is the headline feature of SCS 0.5.0. It replaces the flat
-`concerns` list from SCS 0.3 with a structured model of the concepts that organize a
-domain's work, how those concepts relate to each other, and which standards each one
-satisfies.
+The **Domain Ontology**, introduced in SCS 0.5.0, is a structured model of the concepts
+that organize a domain's work, how those concepts relate to each other, and which standards
+each one satisfies. It replaced the flat `concerns` list from SCS 0.3.
 
-SCS 0.5.0 is a breaking change from 0.3. See the
-[migration guide](/docs/specification/migration-0-5/) if you have 0.3 content.
+Adopting SCS starts with choosing an ontology for your industry. It's the template your
+Domain is scaffolded from, not something you write from a blank page.
 
 ## Why it replaced "concern"
 
@@ -50,12 +49,30 @@ A Domain Ontology lives in the domain manifest, in an `ontology` block, with thr
   association.
 
 A concept can also carry a `satisfies[]` list — shorthand for a `relationships` entry of
-type `satisfies` — mapping it to the standards-tier SCDs it exists to address. In a
+type `satisfies` — mapping it to the [standard citations](/docs/specification/citations/)
+it exists to address, such as `std:iso-14971:2019`. (Before 0.6.0, `satisfies` targeted
+standards-tier SCDs; those IDs still validate, with a deprecation warning.) In a
 regulated domain, this is what makes framework coverage machine-answerable.
 
 Depth is optional. The smallest valid Domain Ontology is a flat list of concept names —
 exactly what `concerns` was, minus the name. A domain adds taxonomy and relationships
 incrementally as it matures.
+
+## The `concept` field on SCDs
+
+An SCD can declare the concept it realizes, and it's expected to when it lives in a concept
+bundle:
+
+```yaml
+id: scd:project:hazard-analysis-procedure
+type: project
+concept: concept:risk-management
+```
+
+This field is the only link from an SCD to its concept. An SCD's `relationships` target other
+SCDs or citations, never `concept:` IDs. A link between two concepts is declared once, here in
+the ontology, under `concepts[].relationships`. When an SCD relationship targets a `concept:`
+ID, the validator's message points to the ontology and the SCD's `concept` field.
 
 ## Concept bundles
 
@@ -64,35 +81,42 @@ rules carry over unchanged: a concept bundle must not import other bundles and m
 at least one SCD. A domain bundle still imports one or more concept bundles and contains no
 direct SCDs.
 
-## Reference ontologies
+Each concept bundle is a section with an `owner`, the role accountable for it. Ontology
+templates give each concept a default role, and the workspace's intake record names the person
+who holds it. See [Bundle Format](/docs/specification/bundle-format/#section-owners).
 
-Three reference ontologies ship with 0.5.0, one per type of business:
+## Ontologies
 
-| Ontology | Concepts | For |
-|---|---|---|
-| **SDLC** | 11 | Software development businesses — the original baseline |
-| **Medical-Device CDMO** | 12 | Regulated medical-device contract manufacturers |
-| **Merchant Cash Advance (MCA)** | 16 | Business funding / merchant cash advance |
+Four ontologies ship with SCS 0.7.0:
 
-The MCA ontology's 16 concepts span three clusters — MCA-native, infrastructure, and a
-universal AI-governance layer. It's best-practice AI governance rather than a compliance
-mapping, so it carries relationships but no `satisfies`.
+| Ontology | For |
+|---|---|
+| **SDLC** (`sdlc`, the default) | Software development businesses |
+| **Medical-Device CDMO** (`cdmo`) | Regulated medical-device contract manufacturers |
+| **Merchant Cash Advance** (`mca`) | Business funding and merchant cash advance |
+| **Personal** (`personal`, new in 0.7.0) | One person's own guidance |
 
-An ontology is authored once per type of business (a market/industry vertical), not once
-per company. Two companies in the same market each instantiate the same ontology model
-rather than sharing concepts across domains — concepts are domain-scoped, not shared across
-domains.
+The MCA ontology is best-practice AI governance rather than a compliance mapping, so it
+carries relationships but no `satisfies`. The `personal` ontology has one fixed concept,
+boundaries (the `prohibited` concept bundle). You define the others yourself.
+
+An ontology is authored once per type of business, not once per company. An organization's
+Domain bundle is the ontology's template with the organization's decisions filled in and
+approved. The organization starts from the template rather than importing it, because the
+template's skeleton SCDs hold open decisions, not rules. Concepts are domain-scoped: two
+companies in the same market each start from the same ontology rather than importing each
+other's concepts.
 
 ## Scaffolding
 
-`scs new project --ontology mca` scaffolds the full MCA ontology directly: 16 concept
-bundles, 16 SCDs, and a domain manifest with real `depends-on`/`relates-to` relationships.
-`--ontology sdlc` is the default and is unchanged from prior behavior.
+`scs new domain NAME --ontology <model>` scaffolds a Domain workspace with that ontology's
+concept bundles and SCD templates. `scs new project` uses the Domain's ontology unless you
+pass `--ontology`. Each ontology provides one template set for a Domain and one for a
+Project. Remove what doesn't apply, and add new concepts with
+`scs add bundle NAME --new --owner ROLE`.
 
-**CDMO scaffolding is deferred.** The CDMO reference ontology ships with 0.5.0, but
-`scs new project --ontology cdmo` isn't wired up yet — the CDMO ontology's concept bundles
-reference SCD content that hasn't been authored, unlike MCA, which had existing skeleton
-content to adapt. The `--ontology` flag will extend to CDMO once that content exists.
+In a Domain repository, the ontology manifest is at `ontology/domain-manifest.yaml` in each
+workspace.
 
 ## Example: Medical-Device CDMO domain manifest
 
@@ -123,16 +147,19 @@ domain:
           - type: relates-to
             target: concept:compliance-governance
         satisfies:
-          - scd:standards:iso-14971
+          - std:iso-14971:2019
         bundle: bundle:risk-management:0.1.0
 ```
 
-The full example, including all 12 CDMO concepts and their relationships, is in
-`schema/domain/examples/medical-device-cdmo-domain.yaml` in the spec repo.
+The full example, including all 12 CDMO concepts and their relationships, is
+[`schema/domain/examples/medical-device-cdmo-domain.yaml`](https://github.com/tim-mccrimmon/structured-context-spec/blob/main/schema/domain/examples/medical-device-cdmo-domain.yaml).
+For a Domain repository built from this ontology, see the
+[MedTech CDMO example](/docs/examples/medtech-cdmo/).
 
 ## Next steps
 
 - [Specification Overview](/docs/specification/overview/)
 - [Bundle Format](/docs/specification/bundle-format/)
+- [Citations](/docs/specification/citations/)
 - [Migration Guide: 0.3 → 0.5.0](/docs/specification/migration-0-5/)
-- [View full spec on GitHub](https://github.com/tim-mccrimmon/structured-context-spec)
+- Full text: [`spec/0.7/domain-ontology.md`](https://github.com/tim-mccrimmon/structured-context-spec/blob/main/spec/0.7/domain-ontology.md)

@@ -8,6 +8,8 @@ image: "/blog/governance-gap-prior-authorization-ai.png"
 imageAlt: "A structured context stack with a healthcare shield representing governed AI criteria for prior authorization workflows"
 ---
 
+**Note, 2026-11-11:** As of SCS 0.7.0, neither the CHAI bundle nor the security baseline is among the repository's examples; the CHAI bundle remains available at the [`v0.6.0` tag](https://github.com/tim-mccrimmon/structured-context-spec/tree/v0.6.0/examples/chai-standards-bundle).
+
 **Update, March 4 2026:** A subject matter expert reviewed this article and flagged several technical inaccuracies in my description of the Da Vinci four-IG stack. I've corrected them. The core argument is unchanged; the Da Vinci mechanics are now more accurate. I'm grateful for the engagement.
 
 ---
