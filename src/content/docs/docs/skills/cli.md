@@ -3,7 +3,9 @@ title: CLI Reference
 description: The scs and scs-validate commands in SCS 0.7.0, review packages, machine mode, and exit codes.
 ---
 
-`pip install "scs-tools==0.7.0"` installs two commands: `scs`, which creates and maintains
+Installing the `scs-tools` and `scs-validator` wheels from the
+[GitHub release](https://github.com/tim-mccrimmon/structured-context-spec/releases) (see the
+[Quick Start](/docs/getting-started/quick-start/)) gives two commands: `scs`, which creates and maintains
 workspaces, and `scs-validate`, which checks them. Python 3.11 or later and git are
 required. No `scs` command opens a network connection.
 

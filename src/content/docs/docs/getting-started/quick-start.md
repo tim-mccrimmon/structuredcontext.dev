@@ -23,11 +23,15 @@ workspace in `domain/` and, later, one workspace per Project in `projects/<name>
 ## 1. Install the tools
 
 ```bash
-pip install "scs-tools==0.7.0"
+pip install \
+  https://github.com/tim-mccrimmon/structured-context-spec/releases/download/v0.7.1/scs_validator-0.7.1-py3-none-any.whl \
+  https://github.com/tim-mccrimmon/structured-context-spec/releases/download/v0.7.1/scs_tools-0.7.1-py3-none-any.whl
 ```
 
-This installs both `scs` and `scs-validate`. Pin the version: an old, unrelated `scs-tools`
-0.1.0 release is also on PyPI. Check the install with:
+This installs both `scs` and `scs-validate` from the
+[GitHub release](https://github.com/tim-mccrimmon/structured-context-spec/releases). SCS is not published on PyPI; the
+`scs-tools` package there is an old, unrelated release, so don't install it. Check the
+install with:
 
 ```bash
 scs --version

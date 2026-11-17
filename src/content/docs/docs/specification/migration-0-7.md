@@ -10,8 +10,9 @@ and compiling need git. Scripts that call the tools need updating. There's no au
 
 ## Steps
 
-1. **Install the 0.7 tools.** `pip install scs-tools==0.7.0` installs both `scs` and
-   `scs-validate`. Python 3.11 or later and git are required.
+1. **Install the 0.7 tools.** Install the `scs-validator` and `scs-tools` wheels from the
+   [GitHub release](https://github.com/tim-mccrimmon/structured-context-spec/releases) in one `pip install` (see the
+   [Quick Start](/docs/getting-started/quick-start/)); SCS is not on PyPI. Python 3.11 or later and git are required.
 2. **Move your context into a Domain repository.** Run `scs new domain <name>`, then
    `scs new project <name>` inside it for each Project. Copy your SCDs and concept bundles
    into the new workspaces, or rewrite them with `scs scd write`. A 0.6 workspace still

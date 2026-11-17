@@ -58,9 +58,10 @@ import SiteFooter from '../../components/SiteFooter.astro';
 			<h2>Get started</h2>
 			<div class="install-block">
 				<p>Install the tools</p>
-				<code>pip install "scs-tools==0.7.0"</code>
+				<code>pip install https://github.com/tim-mccrimmon/structured-context-spec/releases/download/v0.7.1/scs_validator-0.7.1-py3-none-any.whl https://github.com/tim-mccrimmon/structured-context-spec/releases/download/v0.7.1/scs_tools-0.7.1-py3-none-any.whl</code>
 			</div>
 			<p style="color: var(--color-text-muted); font-size: 0.9rem; margin-top: 0.5rem; max-width: 60ch;">
+				The tools are installed from the <a href="https://github.com/tim-mccrimmon/structured-context-spec/releases">GitHub release</a>; SCS is not on PyPI.
 				Then copy the four skills from the spec repository's <code>skills/</code> directory into
 				Claude Code, or upload them to Claude (claude.ai). Python 3.11 or later and git are
 				required. The skills use an open format, but so far they have been tried only in
