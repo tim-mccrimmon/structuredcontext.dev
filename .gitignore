@@ -27,3 +27,5 @@ PROGRESS.md
 # video files
 *.mkv
 *.mp4
+
+.envrc
